@@ -21,13 +21,24 @@ missionnamespace setvariable [_triggerglobalname,_trg];
 _updatecall = format ["[%1,%2] call atlas_obj_bunker_update", vehicleVarName _self, _triggerglobalname];
 _trg setTriggerStatements ["this", _updatecall, _updatecall];
 
-_self setvariable ["atlas_obj_trigger", triggerobj];
+_self setvariable ["atlas_obj_trigger", _trg];
 
 
 
 // TODO Create marker
 //..
-_self setvariable ["atlas_obj_markername", "x"];
+
+//marker call
+[_self,_trg,_initialowner] spawn atlas_obj_mkrZone;
+
+
+
+
+
+
+
+
+
 
 
 

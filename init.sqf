@@ -15,6 +15,9 @@ atlas_obj_bunker_owner = {(_this select 0) getvariable "atlas_obj_currentowner";
 atlas_obj_bunker_setowner = compile preprocessfile "atlas_bunker\setowner.sqf";
 atlas_obj_bunker_update = compile preprocessfile "atlas_bunker\update.sqf";
 
+//markers
+atlas_obj_mkrZone = compile preprocessfile "atlas_markers\mkrZone.sqf";
+
 
 // town mock
 town_objectiveupdate = {
@@ -22,4 +25,11 @@ town_objectiveupdate = {
 };
 //todo - correct object names
 //[bunker,townlogic,guer] call atlas_obj_bunker_newbunker;
+
+//gravia
 [gravia_bunker_1,gravia,RESISTANCE] call atlas_obj_bunker_newbunker;
+gravia setvariable ["atlas_town_objupdate",town_objectiveupdate];
+
+
+
+
