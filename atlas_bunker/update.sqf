@@ -24,7 +24,8 @@ x_newside = _newside;
 if (_westCountZone > _eastCountZone) then {_newside = west};
 if (_eastCountZone > _westCountZone) then {_newside = east};
 
-[_self, _newside] call (_self getvariable "atlas_obj_parent" getvariable "atlas_town_objupdate");
+_parent = _self getvariable "atlas_obj_parent";
+[_parent, _self, _newside] call (_parent getvariable "atlas_town_objupdate");
 
 _self setvariable ["atlas_obj_owner", _newside];
 
