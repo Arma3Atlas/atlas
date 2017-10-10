@@ -23,14 +23,23 @@ _trg setTriggerStatements ["this", _updatecall, _updatecall];
 
 _self setvariable ["atlas_obj_trigger", _trg];
 
-
-
 // TODO Create marker
 //..
+_markerstr = [format ["%1_%2", "marker", _self], _trg] call BIS_fnc_markerToTrigger;
+_self setvariable ["atlas_obj_markerstr",_markerstr];
 
-//marker call
-[_self,_trg,_initialowner] spawn atlas_obj_mkrZone;
+[_self] spawn atlas_obj_bunker_draw;
 
+
+
+//debug
+//hint format ["%1  %2", _initialowner, _markerstr];
+
+//debug - loki cheatsheet//
+//_allVarsTrigger = allVariables _self;
+//x_allVarsTrigger = _allVarsTrigger;
+//hint format ["_self %1",_allVarsTrigger];
+//hint format ["_markerstr: %1",_markerstr];
 
 
 

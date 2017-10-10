@@ -1,11 +1,10 @@
 
 params ["_self","_trg"];
 
-//debug
-_trg2 = _self getvariable "atlas_obj_trigger";
-if (_trg == _trg2) then { hint format ["%1  %2", _trg, _self]; };
+//_markerstr = _self getvariable "atlas_obj_markerstr";
 
-// most simple way to test the core
+
+//simple way to test the core
 _westCountZone = {side _x == west && alive _x} count list _trg;
 _eastCountZone = {side _x == east && alive _x} count list _trg;
 _guerCountZone = {side _x == resistance && alive _x} count list _trg;
@@ -19,22 +18,24 @@ private ["_newside"];
 
 _newside = "";
 
-x_newside = _newside;
-
 if (_westCountZone > _eastCountZone) then {_newside = west};
 if (_eastCountZone > _westCountZone) then {_newside = east};
+//keep it going back to guer for testing.. until end test is figured out
+if (_guerCountZone == 0 && _westCountZone == 0 && _eastCountZone == 0) then {_newside = resistance};
 
+
+//get/set new vars to _self
 _parent = _self getvariable "atlas_obj_parent";
 [_parent, _self, _newside] call (_parent getvariable "atlas_town_objupdate");
 
-_self setvariable ["atlas_obj_owner", _newside];
+_self setvariable ["atlas_obj_currentowner", _newside];
 
 //debug
-hint format ["%1  %2", _newside, _self];
+//hint format ["%1  %2", _newside, _markerstr];
 
 
 //marker update
-[_self,_newside] spawn atlas_obj_mkrZone;
+[_self] spawn atlas_obj_bunker_draw;
 
 
 

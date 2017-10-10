@@ -16,7 +16,7 @@ atlas_obj_bunker_setowner = compile preprocessfile "atlas_bunker\setowner.sqf";
 atlas_obj_bunker_update = compile preprocessfile "atlas_bunker\update.sqf";
 
 //markers
-atlas_obj_mkrZone = compile preprocessfile "atlas_markers\mkrZone.sqf";
+//atlas_obj_mkrZone = compile preprocessfile "atlas_markers\mkrZone.sqf";
 
 
 // town mock
