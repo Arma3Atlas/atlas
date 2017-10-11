@@ -1,8 +1,8 @@
 
 params ["_self","_trg"];
 
-//_markerstr = _self getvariable "atlas_obj_markerstr";
-
+_enabled = _self getvariable "atlas_obj_active";
+if (!_enabled) exitwith {};
 
 //simple way to test the core
 _westCountZone = {side _x == west && alive _x} count list _trg;
@@ -18,10 +18,11 @@ private ["_newside"];
 
 _newside = "";
 
-if (_westCountZone > _eastCountZone) then {_newside = west};
-if (_eastCountZone > _westCountZone) then {_newside = east};
-//keep it going back to guer for testing.. until end test is figured out
-if (_guerCountZone == 0 && _westCountZone == 0 && _eastCountZone == 0) then {_newside = resistance};
+if (_westCountZone > _eastCountZone + _guerCountZone) then {_newside = west};
+if (_eastCountZone > _westCountZone + _guerCountZone) then {_newside = east};
+if (_guerCountZone > _westCountZone + _eastCountZone) then {_newside = resistance};
+
+if (_newside == "") exitwith {};
 
 //get/set new vars to _self
 _parent = _self getvariable "atlas_obj_parent";
@@ -39,19 +40,8 @@ _self setvariable ["atlas_obj_enable",false];
 };
 
 
-
-
-
-
-
-
 //debug
 //hint format ["%1  %2", _newside, _markerstr];
 
-
 //marker update
 [_self] spawn atlas_obj_bunker_draw;
-
-
-
-
