@@ -1,0 +1,65 @@
+Module interface for “objectives”
+(Module in programming sense, not arma map module sense)
+
+- Constructor called with its object, the object of its parent ‘town’, initial owner side
+- Object getvariable “atlas_objective_draw” call [Object]; tells it to update its markers/tasks/etc.
+- Object getvariable “atlas_objective_enable” call [Object, true/false]; to tell it to enable or disable. Usually because the town is no longer in play (no contested neighbors, etc.)
+- Object getvariable “atlas_objective_getowner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
+- Object getvariable “atlas_objective_setowner” call [object,”blufor”]; What’s our preferred way to call sides? 
+- Calls a function on its parent (parentobject getvariable “atlas_objective_fullfilled” call [parentobject, selfobject, newowner] ) when it has been fulfilled.
+Interface will be expanded to account for economy etc.
+Any ‘module’ that follows the interface can be slotted in. It also ensures a clean separation of code.
+
+Module “bunker” - our default form of “objective”
+- Variables
+  “active”, true/false, whether this bunker is capturable at this time. 
+  
+Constructor / initializer (atlas_obj_bunker_newbunker)
+- Called at mission start with parameters as per interface above
+- Initial version will be passed a preplaced bunker object. Later, could make its own physical object.
+- Sets up initial values for all variables on the bunker
+- Sets up interface functions on the object 
+- Makes a trigger for the bunker, (repeatable, anyone present) such that a change in population causes a call to UpdatePopulation.
+- Makes markers/tasks etc that will show the capture status of that objective.
+
+UpdatePopulation (atlas_obj_bunker_updatepopulation)
+- gets called with bunker object by trigger
+- The bunkerobject should have a getvariable entry for the trigger, and this function uses list to get the population.
+- Notes and stores how many people (from each side) are in its zone
+- If no non-owning players are present, reset the capture scores? (game design question)
+- If non-owning players are present, starts the process for running UpdateCapturing every 5 seconds.  (Cba timed eventhandler - if present else spawn?)
+To check: Does a unit dying inside cause it to trigger, such that killing people inside correctly updates population?
+
+UpdateCapturing (not implemented yet)
+- Gets called with the bunker object.
+- If there is reason to continue, set itself up to run again in 5 seconds
+- Adds ‘capture points’ in whatever form that takes, stored in the bunker object.
+- If the capture points reach the threshold of capture, call BunkerCaptured
+BunkerCaptured
+- Sets ownership of the bunker
+- Calls town’s TBD function to notify a change in ownership
+
+Draw (interface)
+- The only function that touches the markers/tasks (beyond creating them)
+- May be the only function that runs client side?
+
+Save (interface)
+- Implemented only much later, if ever
+- Stores data to profile, such that it can be loaded back in
+
+
+Module “Town”
+Has its own constants/variables
+Variables
+“Active”, true/false. 
+Neighbor towns
+“Bunkers”, array of OBJECT, contains the objects representing the objectives
+Constructor
+Run at mission start
+Sets up initial values for variables
+Responsible for calling the constructor of its associated bunkers
+
+
+Draw
+Only function that changes the markers/tasks for the town
+Calls draw on its bunker “subobjects”
