@@ -23,12 +23,27 @@ if (_eastCountZone > _westCountZone) then {_newside = east};
 //keep it going back to guer for testing.. until end test is figured out
 if (_guerCountZone == 0 && _westCountZone == 0 && _eastCountZone == 0) then {_newside = resistance};
 
-
 //get/set new vars to _self
 _parent = _self getvariable "atlas_obj_parent";
 [_parent, _self, _newside] call (_parent getvariable "atlas_town_objupdate");
 
 _self setvariable ["atlas_obj_currentowner", _newside];
+
+
+//test for enabled or not
+if (side player == civilian) then {
+
+_self setvariable ["atlas_obj_enable",false];
+
+
+};
+
+
+
+
+
+
+
 
 //debug
 //hint format ["%1  %2", _newside, _markerstr];

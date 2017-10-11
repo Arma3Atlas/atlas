@@ -26,14 +26,24 @@ _self setvariable ["atlas_obj_trigger", _trg];
 // TODO Create marker
 //..
 _markerstr = [format ["%1_%2", "marker", _self], _trg] call BIS_fnc_markerToTrigger;
+_self setvariable ["atlas_obj_enabled",true];
 _self setvariable ["atlas_obj_markerstr",_markerstr];
 
 [_self] spawn atlas_obj_bunker_draw;
 
 
 
-//debug
-//hint format ["%1  %2", _initialowner, _markerstr];
+//test for enabled or not
+_enabled = true;
+
+//get/set new vars to _self
+_parent = _self getvariable "atlas_obj_parent";
+[_parent, _self, _enabled] call (_parent getvariable "atlas_town_objupdate");
+
+_self setvariable ["atlas_obj_enable",true];
+
+
+
 
 //debug - loki cheatsheet//
 //_allVarsTrigger = allVariables _self;
