@@ -2,9 +2,14 @@ params ["_self"];
 
 _markerstr = _self getvariable "atlas_obj_markerstr";
 _newside = _self getvariable "atlas_obj_currentowner";
-//test for enabled or not
-_enabled = _self getvariable "atlas_obj_enable";
 
+
+_enabled = _self getvariable "atlas_obj_enable";
+if (!_enabled) then {
+	_markerstr setMarkerAlpha 0;
+} else {
+	_markerstr setMarkerAlpha 0.5;
+};
 
 //debug - loki cheatsheet//
 x_markerstr = _markerstr;
@@ -22,16 +27,9 @@ _color = switch (_newside) do {
 _markerstr setMarkerColor _color;
 
 
-//if atlas_obj_enable is false then setMarkerAlpha
-if (!_enabled) then {
 
-	_self setvariable ["atlas_obj_enable",false];
-	
-	_markerstr setMarkerAlpha 0;
-	
-	//hint format ["atlas_obj_enable: %1",_enabled];
-};
 
+//hint format ["atlas_obj_enable: %1",_enabled];
 
 //hint format ["_markerstr: %1",_markerstr];
 
