@@ -26,7 +26,6 @@ _self setvariable ["atlas_obj_trigger", _trg];
 // TODO Create marker
 //..
 _markerstr = [format ["%1_%2", "marker", _self], _trg] call BIS_fnc_markerToTrigger;
-_self setvariable ["atlas_obj_enabled",true];
 _self setvariable ["atlas_obj_markerstr",_markerstr];
 
 [_self] spawn atlas_obj_bunker_draw;
