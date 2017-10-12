@@ -23,13 +23,8 @@ atlas_obj_bunker_update = compile preprocessfile "atlas_bunker\update.sqf";
 town_objectiveupdate = {
 	hint str _this;
 };
-//todo - correct object names
-//[bunker,townlogic,guer] call atlas_obj_bunker_newbunker;
+gravia setvariable ["atlas_townf_objupdate",town_objectiveupdate];
 
-//gravia
 [gravia_bunker_1,gravia,RESISTANCE] call atlas_obj_bunker_newbunker;
-gravia setvariable ["atlas_town_objupdate",town_objectiveupdate];
-
-
 
 

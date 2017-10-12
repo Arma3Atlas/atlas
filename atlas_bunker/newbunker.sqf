@@ -6,10 +6,10 @@ _self setvariable ["atlas_obj_active",false];
 _self setvariable ["atlas_obj_currentowner",_initialowner];
 
 // interface functions
-_self setvariable ["atlas_obj_draw",atlas_obj_bunker_draw];
-_self setvariable ["atlas_obj_enable",atlas_obj_bunker_enable];
-_self setvariable ["atlas_obj_owner",atlas_obj_bunker_getowner];
-_self setvariable ["atlas_obj_setowner",atlas_obj_bunker_setowner];
+_self setvariable ["atlas_objf_draw",atlas_obj_bunker_draw];
+_self setvariable ["atlas_objf_enable",atlas_obj_bunker_enable];
+_self setvariable ["atlas_objf_owner",atlas_obj_bunker_getowner];
+_self setvariable ["atlas_objf_setowner",atlas_obj_bunker_setowner];
 
 // Trigger
 _trg = createTrigger ["EmptyDetector", getpos _self];
@@ -28,18 +28,7 @@ _self setvariable ["atlas_obj_trigger", _trg];
 _markerstr = [format ["%1_%2", "marker", _self], _trg] call BIS_fnc_markerToTrigger;
 _self setvariable ["atlas_obj_markerstr",_markerstr];
 
-[_self] spawn atlas_obj_bunker_draw;
-
-
-
-//test for enabled or not
-_enabled = true;
-
-//get/set new vars to _self
-_parent = _self getvariable "atlas_obj_parent";
-[_parent, _self, _enabled] call (_parent getvariable "atlas_town_objupdate");
-
-_self setvariable ["atlas_obj_enable",true];
+[_self] call (_self getVariable "atlas_objf_draw");  // = atlas_obj_bunker_draw
 
 
 //debug - loki cheatsheet//

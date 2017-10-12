@@ -2,11 +2,13 @@ Module interface for “objectives”
 (Module in programming sense, not arma map module sense)
 
 - Constructor called with its object, the object of its parent ‘town’, initial owner side
-- Object getvariable “atlas_objective_draw” call [Object]; tells it to update its markers/tasks/etc.
-- Object getvariable “atlas_objective_enable” call [Object, true/false]; to tell it to enable or disable. Usually because the town is no longer in play (no contested neighbors, etc.)
-- Object getvariable “atlas_objective_getowner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
-- Object getvariable “atlas_objective_setowner” call [object,”blufor”]; What’s our preferred way to call sides? 
-- Calls a function on its parent (parentobject getvariable “atlas_objective_fullfilled” call [parentobject, selfobject, newowner] ) when it has been fulfilled.
+- Object getvariable “atlas_objf_draw” call [Object]; tells it to update its markers/tasks/etc.
+- Object getvariable “atlas_objfe_enable” call [Object, true/false]; to tell it to enable or disable. Usually because the town is no longer in play (no contested neighbors, etc.)
+- Object getvariable “atlas_objf_owner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
+- Object getvariable “atlas_objf_setowner” call [object,”blufor”]; What’s our preferred way to call sides? 
+- Calls a function on its parent
+  [parentobject, selfobject, newowner] call (parentobject getvariable "atlas_townf_objupdate" );
+  when it has been fulfilled.
 Interface will be expanded to account for economy etc.
 Any ‘module’ that follows the interface can be slotted in. It also ensures a clean separation of code.
 
@@ -22,7 +24,7 @@ Constructor / initializer (atlas_obj_bunker_newbunker)
 - Makes a trigger for the bunker, (repeatable, anyone present) such that a change in population causes a call to UpdatePopulation.
 - Makes markers/tasks etc that will show the capture status of that objective.
 
-UpdatePopulation (atlas_obj_bunker_updatepopulation)
+Update (atlas_obj_bunker_update)
 - gets called with bunker object by trigger
 - The bunkerobject should have a getvariable entry for the trigger, and this function uses list to get the population.
 - Notes and stores how many people (from each side) are in its zone

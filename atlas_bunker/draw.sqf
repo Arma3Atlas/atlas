@@ -11,16 +11,12 @@ _color = switch (_newside) do {
 
 _markerstr setMarkerColor _color;
 
-_enabled = _self getvariable "atlas_obj_enable";
+_enabled = _self getvariable "atlas_obj_active";
 if (!_enabled) then {
 	_markerstr setMarkerAlpha 0;
 } else {
 	_markerstr setMarkerAlpha 0.75;
 };
-
-//test for active or not
-_active = _self getvariable "atlas_obj_active";
-
 
 //debug - loki cheatsheet//
 x_markerstr = _markerstr;
@@ -29,7 +25,6 @@ x_newside = _newside;
 x_enabled = _enabled;
 x_active = _active;
 
-//hint format ["atlas_obj_enable: %1",_enabled];
 //hint format ["_markerstr: %1",_markerstr];
 
 // location markers for the objectives
