@@ -1,8 +1,11 @@
 
 params ["_self","_trg"];
 
-_enabled = _self getvariable "atlas_obj_active";
+_enabled = _self getvariable "atlas_obj_enable";
 if (!_enabled) exitwith {};
+
+//test for active or not
+_self setvariable ["atlas_obj_active",true];
 
 //simple way to test the core
 _westCountZone = {side _x == west && alive _x} count list _trg;
@@ -22,7 +25,11 @@ if (_westCountZone > _eastCountZone + _guerCountZone) then {_newside = west};
 if (_eastCountZone > _westCountZone + _guerCountZone) then {_newside = east};
 if (_guerCountZone > _westCountZone + _eastCountZone) then {_newside = resistance};
 
-if (_newside == "") exitwith {};
+//throws an error -  Error Generic error in expression
+//if (_newside == "") exitwith {};
+
+//test for active on/off
+if (count list _trg <= 0) then {_self setvariable ["atlas_obj_active",false];};
 
 //get/set new vars to _self
 _parent = _self getvariable "atlas_obj_parent";
@@ -31,10 +38,13 @@ _parent = _self getvariable "atlas_obj_parent";
 _self setvariable ["atlas_obj_currentowner", _newside];
 
 
-//test for enabled or not
+//test for enabled / active or not
 if (side player == civilian) then {
 
 _self setvariable ["atlas_obj_enable",false];
+
+//test for active or not
+_self setvariable ["atlas_obj_active",false];
 
 
 };

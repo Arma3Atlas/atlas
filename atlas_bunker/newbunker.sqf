@@ -8,7 +8,7 @@ _self setvariable ["atlas_obj_currentowner",_initialowner];
 // interface functions
 _self setvariable ["atlas_obj_draw",atlas_obj_bunker_draw];
 _self setvariable ["atlas_obj_enable",atlas_obj_bunker_enable];
-_self setvariable ["atlas_obj_owner",atlas_obj_bunker_owner];
+_self setvariable ["atlas_obj_owner",atlas_obj_bunker_getowner];
 _self setvariable ["atlas_obj_setowner",atlas_obj_bunker_setowner];
 
 // Trigger
@@ -40,8 +40,6 @@ _parent = _self getvariable "atlas_obj_parent";
 [_parent, _self, _enabled] call (_parent getvariable "atlas_town_objupdate");
 
 _self setvariable ["atlas_obj_enable",true];
-
-
 
 
 //debug - loki cheatsheet//
