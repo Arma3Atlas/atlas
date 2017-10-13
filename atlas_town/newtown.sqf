@@ -5,8 +5,10 @@ _self setvariable ["atlas_town_objectives",_objectives];
 _self setvariable ["atlas_town_neighbors",_neighbors];
 
 _self setvariable ["atlas_townf_draw", atlas_town_draw];
+_self setvariable ["atlas_townf_enable",atlas_town_enable];
 _self setvariable ["atlas_townf_objupdate", atlas_town_objupdate];
-
+_self setvariable ["atlas_townf_setowner",atlas_town_setowner];
+_self setvariable ["atlas_townf_neighborupdate",atlas_town_neighborupdate];
 // Objectives
 // Not dealing with multiple objective types yet
 { [_x,_self,_initialowner] call atlas_obj_bunker_newbunker; }

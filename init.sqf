@@ -19,8 +19,9 @@ atlas_obj_bunker_update = compile preprocessFileLineNumbers "atlas_bunker\update
 atlas_town_newtown = compile preprocessFileLineNumbers "atlas_town\newtown.sqf";
 atlas_town_draw = compile preprocessFileLineNumbers "atlas_town\draw.sqf";
 atlas_town_objupdate = compile preprocessFileLineNumbers "atlas_town\objupdate.sqf";
+atlas_town_setowner = compile preprocessFileLineNumbers "atlas_town\setowner.sqf";
+atlas_town_neighborupdate = compile preprocessFileLineNumbers "atlas_town\neighborupdate.sqf";
+atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 
-
-[gravia, [], [gravia_bunker_1],resistance ]
-  call atlas_town_newtown;
+[gravia, [], [gravia_bunker_1],resistance ] call atlas_town_newtown;
 
