@@ -5,6 +5,7 @@ _self setvariable ["atlas_town_objectives",_objectives];
 _self setvariable ["atlas_town_neighbors",_neighbors];
 
 _self setvariable ["atlas_townf_draw", atlas_town_draw];
+_self setvariable ["atlas_townf_objupdate", atlas_town_objupdate];
 
 // Objectives
 // Not dealing with multiple objective types yet
