@@ -4,6 +4,8 @@ _self setvariable ["atlas_town_owner",_initialowner];
 _self setvariable ["atlas_town_objectives",_objectives];
 _self setvariable ["atlas_town_neighbors",_neighbors];
 
+_self setvariable ["atlas_town_active", false];
+
 _self setvariable ["atlas_townf_draw", atlas_town_draw];
 _self setvariable ["atlas_townf_enable",atlas_town_enable];
 _self setvariable ["atlas_townf_objupdate", atlas_town_objupdate];
@@ -23,9 +25,4 @@ _self setvariable ["atlas_obj_markername", _locName];
 _markerstr = createMarker [_locName, position _nearLoc];
 _markerstr setMarkerShape "RECTANGLE";
 _markerstr setMarkerSize [400,400];
-
-
-
-
-
 

@@ -24,4 +24,4 @@ atlas_town_neighborupdate = compile preprocessFileLineNumbers "atlas_town\neighb
 atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 
 [gravia, [], [gravia_bunker_1],resistance ] call atlas_town_newtown;
-
+[gravia,true] call (gravia getvariable "atlas_townf_enable");
