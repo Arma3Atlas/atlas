@@ -12,4 +12,4 @@ params ["_self","_objective","_newside"];
 if (_newside == civilian) exitwith {};
 
 [_self,_newside] call (_self getvariable "atlas_townf_setowner");
-
+[_self,false] call (_self getvariable "atlas_townf_draw");

@@ -26,3 +26,5 @@ _markerstr = createMarker [_locName, position _nearLoc];
 _markerstr setMarkerShape "RECTANGLE";
 _markerstr setMarkerSize [400,400];
 
+
+[_self] call (_self getvariable "atlas_townf_draw");
