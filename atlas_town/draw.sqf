@@ -1,7 +1,7 @@
  params ["_self","_norecursive"];
 
 _newside = _self getvariable "atlas_town_owner";
-_markername = _self getVariable "atlas_obj_markername";
+_markername = _self getVariable "atlas_town_markername";
 
 _markername setMarkerAlpha 0.5;
 

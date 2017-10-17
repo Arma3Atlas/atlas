@@ -3,7 +3,7 @@ hint ("town::objupdate " + str _this);
 params ["_self","_objective","_newside"];
 
 {
-	private _objside = [_x] call (_x getvariable "atlas_objf_getowner");
+	private _objside = [_x] call (_x getvariable "atlas_objf_owner");
 	if (_objside != _newside) then {
 		_newside = civilian;
 	};

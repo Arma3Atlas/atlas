@@ -20,11 +20,13 @@ foreach _objectives;
 // Set up marker(s)
 _nearLoc = nearestLocation [_self, ""];
 _self setvariable ["atlas_town_nearloc",_nearLoc];  // in case we need it
-_locName = name _nearLoc;
-_self setvariable ["atlas_obj_markername", _locName];
+_locName = text _nearLoc;
+_self setvariable ["atlas_town_markername", _locName];
 _markerstr = createMarker [_locName, position _nearLoc];
 _markerstr setMarkerShape "RECTANGLE";
 _markerstr setMarkerSize [400,400];
-
+_markerstr setMarkerAlpha 0.5;
+//_markerstr setMarkerType "hd_warning";
+//_markerstr setMarkerText _locName;
 
 [_self] call (_self getvariable "atlas_townf_draw");
