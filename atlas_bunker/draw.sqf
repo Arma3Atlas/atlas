@@ -23,7 +23,6 @@ x_markerstr = _markerstr;
 x_self = _self;
 x_newside = _newside;
 x_enabled = _enabled;
-x_active = _active;
 
 //hint format ["_markerstr: %1",_markerstr];
 
