@@ -5,7 +5,7 @@ params ["_self","_neighbor"];
 
 _neighbors = _self getVariable "atlas_town_neighbors";
 
-assert(count _neighbors > 0); // what neighbor called us?
+assert(count _neighbors > 0); // sooo... what neighbor called us?
 
 // Todo: Need a "forced enable" state to keep the initial objective enabled
 
