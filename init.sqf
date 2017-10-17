@@ -26,5 +26,6 @@ atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 [gravia, [athira], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_newtown;
 [gravia,true] call (gravia getvariable "atlas_townf_enable");
 
-[athira, [gravia], [athira_bunker_1,athira_bunker_2],resistance ] call atlas_town_newtown;
-//[athira,true] call (athira getvariable "atlas_townf_enable");
+[athira, [gravia,ifestiona], [athira_bunker_1,athira_bunker_2],resistance ] call atlas_town_newtown;
+[ifestiona, [athira], [ifestiona_bunker_1,ifestiona_bunker_2],resistance ] call atlas_town_newtown;
+
