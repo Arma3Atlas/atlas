@@ -1,19 +1,19 @@
  params ["_self","_norecursive"];
 
 _newside = _self getvariable "atlas_town_owner";
-_locname = _self getVariable "atlas_town_locname";
+_markername = _self getVariable "atlas_obj_markername";
 
-_locName setMarkerAlpha 0.5;
+_markername setMarkerAlpha 0.5;
 
 _color = switch (_newside) do {
     case west: { "ColorWest" };
     case east: { "ColorEast" };
 	default { "ColorGUER" };
 };
-_locName setMarkerColor _color; 
+_markername setMarkerColor _color; 
 
 // Objectives
-if (_norecursive) exitwith {};
+if (!isNil "_norecursive" && {_norecursive}) exitwith {};
 {[_x] call (_x getVariable "atlas_objf_draw")} 
  foreach (_self getVariable "atlas_town_objectives");
 
