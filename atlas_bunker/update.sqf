@@ -25,10 +25,9 @@ if (_newside == civilian) exitwith {};
 _self setvariable ["atlas_objp_currentowner", _newside];
 
 _parent = _self getvariable "atlas_objp_parent";
-[_parent, _self, _newside] call (_parent getvariable "atlas_townf_objupdate");
-
-//debug
-//hint format ["%1  %2", _newside, _markerstr];
+[_parent, _self, _newside] call (_parent getvariable "atlas_town_objupdate");
 
 //marker update
 [_self] call (_self getvariable "atlas_obj_draw");
+
+

@@ -7,14 +7,14 @@ params ["_self","_objective","_newside"];
 	if (_objside != _newside) then {
 		_newside = civilian;
 	};
-} foreach (_self getvariable "atlas_town_objectives");
+} foreach (_self getvariable "atlas_townp_objectives");
 
 if (_newside == civilian) exitwith {};
 
-[_self,_newside] call (_self getvariable "atlas_townf_setowner");
-[_self,false] call (_self getvariable "atlas_townf_draw");
+[_self,_newside] call (_self getvariable "atlas_town_setowner");
+[_self,false] call (_self getvariable "atlas_town_draw");
 
 {
-	[_x,_self,_newside] call (_x getVariable "atlas_townf_neighborupdate");
-} foreach (_self getvariable "atlas_town_neighbors");
+	[_x,_self,_newside] call (_x getVariable "atlas_town_neighborupdate");
+} foreach (_self getvariable "atlas_townp_neighbors");
 

@@ -7,7 +7,7 @@ Module interface for “objectives”
 - Object getvariable “atlas_obj_owner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
 - Object getvariable “atlas_obj_setowner” call [object,west]; What’s our preferred way to call sides? 
 - Calls a function on its parent
-  [parentobject, selfobject, newowner] call (parentobject getvariable "atlas_townf_objupdate" );
+  [parentobject, selfobject, newowner] call (parentobject getvariable "atlas_town_objupdate" );
   when it has been fulfilled.
 Interface will be expanded to account for economy etc.
 Any ‘module’ that follows the interface can be slotted in. It also ensures a clean separation of code.
@@ -53,30 +53,30 @@ BunkerCaptured
 
 Module “Town” Interface:
 
-atlas_town_newtown : [townobject,[neighbors],[objectives],initial_owner]
+atlas_town_new : [townobject,[neighbors],[objectives],initial_owner]
 - Sets up town object for further calls 
 - Initializes objectives passed for this town
 - defaults to setting the town to inactive
 - does not draw neighbor lines
 
-town->atlas_townf_objupdate : [townobject,objectiveobject,newowner]
+town->atlas_town_objupdate : [townobject,objectiveobject,newowner]
 - Notify town an objective has been captured
 - Town will then reevaluate its ownership
 
-town->atlas_townf_draw : [townobject]
+town->atlas_town_draw : [townobject]
 - Updates markers
 - Updates markers of objectives
 
-town->atlas_townf_neighbor_update : [townobject]
+town->atlas_town_neighbor_update : [townobject]
 - A neighbor has been changed its ownership. Reevaluate whether this town is enabled.
 
-town->atlas_townf_enable : [townobject,true/false]
+town->atlas_town_enable : [townobject,true/false]
 - Force enabling/disabling a town
 - Manages its objectives
 
-town->atlas_townf_getowner : [townobject]
+town->atlas_town_getowner : [townobject]
 
-town->atlas_townf_setowner : [townobject,side]
+town->atlas_town_setowner : [townobject,side]
 - Passes this on to the objectives
 
 

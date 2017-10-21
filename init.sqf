@@ -16,15 +16,15 @@ atlas_obj_bunker_setowner = compile preprocessFileLineNumbers "atlas_bunker\seto
 atlas_obj_bunkerp_update = compile preprocessFileLineNumbers "atlas_bunker\update.sqf";
 
 // Town functions
-atlas_town_newtown = compile preprocessFileLineNumbers "atlas_town\newtown.sqf";
+atlas_town_new = compile preprocessFileLineNumbers "atlas_town\newtown.sqf";
 atlas_town_draw = compile preprocessFileLineNumbers "atlas_town\draw.sqf";
 atlas_town_objupdate = compile preprocessFileLineNumbers "atlas_town\objupdate.sqf";
 atlas_town_setowner = compile preprocessFileLineNumbers "atlas_town\setowner.sqf";
 atlas_town_neighborupdate = compile preprocessFileLineNumbers "atlas_town\neighborupdate.sqf";
 atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 
-[gravia, [athira], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_newtown;
-[gravia,true] call (gravia getvariable "atlas_townf_enable");
+[gravia, [athira], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
+[gravia,true] call (gravia getvariable "atlas_town_enable");
 
 [athira, [gravia,ifestiona], [athira_bunker_1,athira_bunker_2],resistance ] call atlas_town_newtown;
 [ifestiona, [athira], [ifestiona_bunker_1,ifestiona_bunker_2],resistance ] call atlas_town_newtown;
