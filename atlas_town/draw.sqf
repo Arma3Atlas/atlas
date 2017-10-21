@@ -14,6 +14,6 @@ _markername setMarkerColor _color;
 
 // Objectives
 if (!isNil "_norecursive" && {_norecursive}) exitwith {};
-{[_x] call (_x getVariable "atlas_objf_draw")} 
+{[_x] call (_x getVariable "atlas_obj_draw")} 
  foreach (_self getVariable "atlas_town_objectives");
 

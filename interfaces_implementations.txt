@@ -2,10 +2,10 @@ Module interface for “objectives”
 (Module in programming sense, not arma map module sense)
 
 - Constructor called with its object, the object of its parent ‘town’, initial owner side
-- Object getvariable “atlas_objf_draw” call [Object]; tells it to update its markers/tasks/etc.
-- Object getvariable “atlas_objf_enable” call [Object, true/false]; to tell it to enable or disable. Usually because the town is no longer in play (no contested neighbors, etc.)
-- Object getvariable “atlas_objf_owner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
-- Object getvariable “atlas_objf_setowner” call [object,west]; What’s our preferred way to call sides? 
+- Object getvariable “atlas_obj_draw” call [Object]; tells it to update its markers/tasks/etc.
+- Object getvariable “atlas_obj_enable” call [Object, true/false]; to tell it to enable or disable. Usually because the town is no longer in play (no contested neighbors, etc.)
+- Object getvariable “atlas_obj_owner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
+- Object getvariable “atlas_obj_setowner” call [object,west]; What’s our preferred way to call sides? 
 - Calls a function on its parent
   [parentobject, selfobject, newowner] call (parentobject getvariable "atlas_townf_objupdate" );
   when it has been fulfilled.
@@ -15,7 +15,7 @@ Any ‘module’ that follows the interface can be slotted in. It also ensures a
 
 Module “bunker” - our default form of “objective”
 
-Constructor / initializer (atlas_obj_bunker_newbunker)
+Constructor / initializer (atlas_obj_bunker_new)
 - Called at mission start with parameters as per interface above
 - Initial version will be passed a preplaced bunker object. Later, could make its own physical object.
 - Sets up initial values for all variables on the bunker

@@ -1,7 +1,7 @@
 params ["_self"];
 
-_markerstr = _self getvariable "atlas_obj_markerstr";
-_newside = _self getvariable "atlas_obj_currentowner";
+_markerstr = _self getvariable "atlas_objp_markerstr";
+_newside = _self getvariable "atlas_objp_currentowner";
 
 _color = switch (_newside) do {
     case west: { "ColorWest" };
@@ -11,7 +11,7 @@ _color = switch (_newside) do {
 
 _markerstr setMarkerColor _color;
 
-_enabled = _self getvariable "atlas_obj_active";
+_enabled = _self getvariable "atlas_objp_active";
 if (!_enabled) then {
 	_markerstr setMarkerAlpha 0;
 } else {

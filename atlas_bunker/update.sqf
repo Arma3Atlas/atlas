@@ -2,7 +2,7 @@
 params ["_self","_trg"];
 
 // If town is not capturable, disregard anything entering the trigger area
-_enabled = _self getvariable "atlas_obj_active";
+_enabled = _self getvariable "atlas_objp_active";
 if (!_enabled) exitwith {};
 
 _westCountZone = {side _x == west && alive _x} count list _trg;
@@ -22,13 +22,13 @@ if (_newside == civilian) exitwith {};
 // This is where we'll start the longer capture process with timers, etc.
 // Currently simplified for testing
 
-_self setvariable ["atlas_obj_currentowner", _newside];
+_self setvariable ["atlas_objp_currentowner", _newside];
 
-_parent = _self getvariable "atlas_obj_parent";
+_parent = _self getvariable "atlas_objp_parent";
 [_parent, _self, _newside] call (_parent getvariable "atlas_townf_objupdate");
 
 //debug
 //hint format ["%1  %2", _newside, _markerstr];
 
 //marker update
-[_self] call (_self getvariable "atlas_objf_draw");
+[_self] call (_self getvariable "atlas_obj_draw");
