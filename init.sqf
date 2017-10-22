@@ -23,9 +23,12 @@ atlas_town_setowner = compile preprocessFileLineNumbers "atlas_town\setowner.sqf
 atlas_town_neighborupdate = compile preprocessFileLineNumbers "atlas_town\neighborupdate.sqf";
 atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 
-[gravia, [athira], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
+[gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
 [gravia,true] call (gravia getvariable "atlas_town_enable");
 
-[athira, [gravia,ifestiona], [athira_bunker_1,athira_bunker_2],resistance ] call atlas_town_new;
-[ifestiona, [athira], [ifestiona_bunker_1,ifestiona_bunker_2],resistance ] call atlas_town_new;
+[telos, [gravia,anthrakia,kalithea], [telos_bunker_1,telos_bunker_2],resistance ] call atlas_town_new;
+[anthrakia, [telos], [anthrakia_bunker_1,anthrakia_bunker_2],resistance ] call atlas_town_new;
+[kalithea, [telos], [kalithea_bunker_1,kalithea_bunker_2],resistance ] call atlas_town_new;
+
+
 
