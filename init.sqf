@@ -11,7 +11,7 @@ createcenter CIVILIAN;
 atlas_obj_bunker_new = compile preprocessFileLineNumbers "atlas_bunker\newbunker.sqf";
 atlas_obj_bunker_draw = compile preprocessFileLineNumbers "atlas_bunker\draw.sqf";
 atlas_obj_bunker_enable = compile preprocessFileLineNumbers "atlas_bunker\enable.sqf";
-atlas_obj_bunkerp_getowner = {(_this select 0) getvariable "atlas_obj_currentowner";};
+atlas_obj_bunker_getowner = {(_this select 0) getvariable "atlas_objp_currentowner";};
 atlas_obj_bunker_setowner = compile preprocessFileLineNumbers "atlas_bunker\setowner.sqf";
 atlas_obj_bunkerp_update = compile preprocessFileLineNumbers "atlas_bunker\update.sqf";
 

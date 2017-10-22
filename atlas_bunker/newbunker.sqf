@@ -8,7 +8,7 @@ _self setvariable ["atlas_objp_currentowner",_initialowner];
 // interface functions
 _self setvariable ["atlas_obj_draw",atlas_obj_bunker_draw];
 _self setvariable ["atlas_obj_enable",atlas_obj_bunker_enable];
-_self setvariable ["atlas_obj_owner",atlas_obj_bunkerp_getowner];
+_self setvariable ["atlas_obj_owner",atlas_obj_bunker_getowner];
 _self setvariable ["atlas_obj_setowner",atlas_obj_bunker_setowner];
 
 // Trigger
