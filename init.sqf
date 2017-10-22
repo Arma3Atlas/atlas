@@ -34,10 +34,10 @@ atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
 [anthrakia, [telos,charkia], [anthrakia_bunker_1,anthrakia_bunker_2],resistance ] call atlas_town_new;
 [kalithea, [telos,rodopoli], [kalithea_bunker_1,kalithea_bunker_2],resistance ] call atlas_town_new;
 [charkia, [rodopoli,anthrakia], [charkia_bunker_1,charkia_bunker_2],resistance ] call atlas_town_new;
-[rodopoli, [charkia,kalithea], [rodopoli_bunker_1,rodopoli_bunker_2],resistance ] call atlas_town_new;
+[rodopoli, [paros,charkia,kalithea], [rodopoli_bunker_1,rodopoli_bunker_2],resistance ] call atlas_town_new;
 
 //east start
-[paros, [kalithea], [paros_bunker_1,paros_bunker_2],resistance ] call atlas_town_new;
+[paros, [rodopoli], [paros_bunker_1,paros_bunker_2],resistance ] call atlas_town_new;
 [paros,true] call (paros getvariable "atlas_town_enable");
 
 
