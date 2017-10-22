@@ -4,12 +4,14 @@ _self setvariable ["atlas_townp_owner",_initialowner];
 _self setvariable ["atlas_townp_objectives",_objectives];
 _self setvariable ["atlas_townp_neighbors",_neighbors];
 _self setvariable ["atlas_townp_active", false];
+_self setvariable ["atlas_townp_open_to",[]];	// who can capture
 
 _self setvariable ["atlas_town_draw", atlas_town_draw];
 _self setvariable ["atlas_town_enable",atlas_town_enable];
 _self setvariable ["atlas_town_objupdate", atlas_town_objupdate];
 _self setvariable ["atlas_town_setowner",atlas_town_setowner];
 _self setvariable ["atlas_town_neighborupdate",atlas_town_neighborupdate];
+_self setvariable ["atlas_town_perm_open_to",atlas_town_perm_open_to];
 
 // Objectives
 // Not dealing with multiple objective types yet

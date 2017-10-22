@@ -5,7 +5,8 @@ Module interface for “objectives”
 - Object getvariable “atlas_obj_draw” call [Object]; tells it to update its markers/tasks/etc.
 - Object getvariable “atlas_obj_enable” call [Object, true/false]; to tell it to enable or disable. Usually because the town is no longer in play (no contested neighbors, etc.)
 - Object getvariable “atlas_obj_owner” call [object]; returns current owning side. May return empty string to signify “all” sides, for something that just has to be completed by somebody.
-- Object getvariable “atlas_obj_setowner” call [object,west]; What’s our preferred way to call sides? 
+- Object getvariable “atlas_obj_setowner” call [object,west];
+- Object getvariable "atlas_obj_open_to" call [object,west]; This side should always count as a neighbor
 - Calls a function on its parent
   [parentobject, selfobject, newowner] call (parentobject getvariable "atlas_town_objupdate" );
   when it has been fulfilled.
@@ -79,4 +80,7 @@ town->atlas_town_getowner : [townobject]
 town->atlas_town_setowner : [townobject,side]
 - Passes this on to the objectives
 
+town->atlas_town_perm_open_to : [townobject, side]
+- Intended to be called at beginning of mission
+- This town is always open for that side to capture.
 
