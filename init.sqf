@@ -5,7 +5,6 @@ createcenter EAST;
 createcenter RESISTANCE;
 createcenter CIVILIAN;
 
-
 // Just where this code goes in the "final product" is TBD
 // a release would use compilefinal
 atlas_obj_bunker_new = compile preprocessFileLineNumbers "atlas_bunker\newbunker.sqf";
@@ -23,6 +22,8 @@ atlas_town_setowner = compile preprocessFileLineNumbers "atlas_town\setowner.sqf
 atlas_town_neighborupdate = compile preprocessFileLineNumbers "atlas_town\neighborupdate.sqf";
 atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 
+atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
+
 [gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
 [gravia,true] call (gravia getvariable "atlas_town_enable");
 
@@ -30,5 +31,5 @@ atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 [anthrakia, [telos], [anthrakia_bunker_1,anthrakia_bunker_2],resistance ] call atlas_town_new;
 [kalithea, [telos], [kalithea_bunker_1,kalithea_bunker_2],resistance ] call atlas_town_new;
 
-[rodopoli, [telos,kalithea], [rodopoli_bunker_1,rodopoli_bunker_2],resistance ] call atlas_town_new;
-[agiosPetros, [telos,kalithea], [agiosPetros_bunker_1,agiosPetros_bunker_2],resistance ] call atlas_town_new;
+
+

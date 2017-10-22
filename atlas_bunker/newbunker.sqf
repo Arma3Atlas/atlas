@@ -25,7 +25,8 @@ _self setvariable ["atlas_objp_trigger", _trg];
 
 // TODO Create marker
 //..
-_markerstr = [format ["%1_%2", "marker", _self], _trg] call BIS_fnc_markerToTrigger;
+private _markername = format ["atlas_marker_%1",call atlas_util_uid];
+private _markerstr = [_markername, _trg] call BIS_fnc_markerToTrigger;
 _self setvariable ["atlas_objp_markerstr",_markerstr];
 
 [_self] call (_self getVariable "atlas_obj_draw");  // = atlas_obj_bunker_draw
