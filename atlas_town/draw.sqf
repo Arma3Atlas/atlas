@@ -6,7 +6,7 @@ private _markername = _self getVariable "atlas_townp_markername";
 private _alpha = 0.2;
 if (_self getVariable "atlas_townp_active") then {
     _alpha = 0.5;
-}
+};
 
 _markername setMarkerAlpha _alpha;
 
