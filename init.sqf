@@ -5,6 +5,7 @@ createcenter EAST;
 createcenter RESISTANCE;
 createcenter CIVILIAN;
 
+
 // Just where this code goes in the "final product" is TBD
 // a release would use compilefinal
 atlas_obj_bunker_new = compile preprocessFileLineNumbers "atlas_bunker\newbunker.sqf";
@@ -24,12 +25,20 @@ atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 
 atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
 
+//west start
 [gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
 [gravia,true] call (gravia getvariable "atlas_town_enable");
 
+//middle fight
 [telos, [gravia,anthrakia,kalithea], [telos_bunker_1,telos_bunker_2],resistance ] call atlas_town_new;
-[anthrakia, [telos], [anthrakia_bunker_1,anthrakia_bunker_2],resistance ] call atlas_town_new;
-[kalithea, [telos], [kalithea_bunker_1,kalithea_bunker_2],resistance ] call atlas_town_new;
+[anthrakia, [telos,charkia], [anthrakia_bunker_1,anthrakia_bunker_2],resistance ] call atlas_town_new;
+[kalithea, [telos,rodopoli], [kalithea_bunker_1,kalithea_bunker_2],resistance ] call atlas_town_new;
+[charkia, [rodopoli,anthrakia], [charkia_bunker_1,charkia_bunker_2],resistance ] call atlas_town_new;
+[rodopoli, [charkia,kalithea], [rodopoli_bunker_1,rodopoli_bunker_2],resistance ] call atlas_town_new;
+
+//east start
+[paros, [kalithea], [paros_bunker_1,paros_bunker_2],resistance ] call atlas_town_new;
+[paros,true] call (paros getvariable "atlas_town_enable");
 
 
 
