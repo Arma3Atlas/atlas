@@ -11,7 +11,7 @@ createcenter CIVILIAN;
 atlas_obj_bunker_new = compile preprocessFileLineNumbers "atlas_bunker\newbunker.sqf";
 atlas_obj_bunker_draw = compile preprocessFileLineNumbers "atlas_bunker\draw.sqf";
 atlas_obj_bunker_enable = compile preprocessFileLineNumbers "atlas_bunker\enable.sqf";
-atlas_obj_bunker_getowner = {(_this select 0) getvariable "atlas_obj_currentowner";};
+atlas_obj_bunkerp_getowner = {(_this select 0) getvariable "atlas_obj_currentowner";};
 atlas_obj_bunker_setowner = compile preprocessFileLineNumbers "atlas_bunker\setowner.sqf";
 atlas_obj_bunkerp_update = compile preprocessFileLineNumbers "atlas_bunker\update.sqf";
 
@@ -26,6 +26,6 @@ atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 [gravia, [athira], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
 [gravia,true] call (gravia getvariable "atlas_town_enable");
 
-[athira, [gravia,ifestiona], [athira_bunker_1,athira_bunker_2],resistance ] call atlas_town_newtown;
-[ifestiona, [athira], [ifestiona_bunker_1,ifestiona_bunker_2],resistance ] call atlas_town_newtown;
+[athira, [gravia,ifestiona], [athira_bunker_1,athira_bunker_2],resistance ] call atlas_town_new;
+[ifestiona, [athira], [ifestiona_bunker_1,ifestiona_bunker_2],resistance ] call atlas_town_new;
 
