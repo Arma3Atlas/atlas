@@ -27,6 +27,7 @@ atlas_town_enable = compile preprocessFileLineNumbers "atlas_town\enable.sqf";
 atlas_town_perm_open_to = compile preprocessFileLineNumbers "atlas_town\perm_open_to.sqf";
 
 atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
+atlas_util_drawtownlinks = compile preprocessFileLineNumbers "atlas_util\drawtownlinks.sqf";
 
 //west start
 [gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
@@ -45,3 +46,4 @@ atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
 [paros,east] call (gravia getvariable "atlas_town_perm_open_to");
 [paros,true] call (paros getvariable "atlas_town_enable");
 
+gravia call atlas_util_drawtownlinks;
