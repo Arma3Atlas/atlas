@@ -18,8 +18,9 @@ _trg = createTrigger ["EmptyDetector", getpos _self];
 _trg setTriggerArea [5, 5, 0, false];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
 
+// todo: find a better way to pass _self than relying on vehicleVarName
 _updatecall = format ["[%1] call atlas_obj_bunkerp_update", vehicleVarName _self];
-_trg setTriggerStatements ["this", _updatecall, _updatecall];
+_trg setTriggerStatements ["this", _updatecall, ""];
 
 _self setvariable ["atlas_objp_trigger", _trg];
 

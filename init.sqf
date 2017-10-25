@@ -14,6 +14,7 @@ atlas_obj_bunker_enable = compile preprocessFileLineNumbers "atlas_bunker\enable
 atlas_obj_bunker_getowner = {(_this select 0) getvariable "atlas_objp_currentowner";};
 atlas_obj_bunker_setowner = compile preprocessFileLineNumbers "atlas_bunker\setowner.sqf";
 atlas_obj_bunkerp_update = compile preprocessFileLineNumbers "atlas_bunker\update.sqf";
+atlas_obj_bunkerp_updater = compile preprocessFileLineNumbers "atlas_bunker\updater.sqf";
 atlas_obj_bunker_open_to = compile preprocessFileLineNumbers "atlas_bunker\open_to.sqf";
 
 // Town functions
