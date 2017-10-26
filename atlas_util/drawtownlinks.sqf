@@ -3,7 +3,7 @@ params ["_firsttown"];
 // First build the master town list
 private _towns = [_firsttown];
 for [{_i = 0}, {_i < count _towns}, {_i=_i+1}] do {
-	private _currenttown = _towns select _i
+	private _currenttown = _towns select _i;
 	private _neighb = [_currenttown] call (_currenttown getvariable "atlas_town_getneighbors");
 	{ _towns pushBackUnique _x } foreach _neighb;
 };
