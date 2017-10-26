@@ -12,7 +12,7 @@ _self setvariable ["atlas_town_objupdate", atlas_town_objupdate];
 _self setvariable ["atlas_town_setowner",atlas_town_setowner];
 _self setvariable ["atlas_town_neighborupdate",atlas_town_neighborupdate];
 _self setvariable ["atlas_town_perm_open_to",atlas_town_perm_open_to];
-_self setvariable ["atlas_town_getneighbors",{_this getvariable "atlas_townp_neighbors"; }];
+_self setvariable ["atlas_town_getneighbors",{(_this select 0) getvariable "atlas_townp_neighbors"; }];
 
 // Objectives
 // Not dealing with multiple objective types yet
