@@ -28,7 +28,7 @@ atlas_town_perm_open_to = compile preprocessFileLineNumbers "atlas_town\perm_ope
 
 atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
 atlas_util_drawtownlinks = compile preprocessFileLineNumbers "atlas_util\drawtownlinks.sqf";
-atlas_debugout = compile preprocessfilelinenumbers "atlas_util\debutout.sqf";
+atlas_debugout = compile preprocessfilelinenumbers "atlas_util\debugout.sqf";
 atlas_debugout_enabled = true;
 
 //west start
