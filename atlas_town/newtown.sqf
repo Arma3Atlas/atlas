@@ -3,7 +3,8 @@ params ["_self","_neighbors","_objectives","_initialowner"];
 if (isServer) then {
 	_self setvariable ["atlas_townp_owner",_initialowner,true];
 	_self setvariable ["atlas_townp_active", false, true];
-	_self setvariable ["atlas_townp_open_to",[],true];	// who can capture
+	_self setvariable ["atlas_townp_perm_open_to",[],true];
+	_self setvariable ["atlas_townp_open_to",[_initialowner],true]; 
 };
 _self setvariable ["atlas_townp_objectives",_objectives];
 _self setvariable ["atlas_townp_neighbors",_neighbors];

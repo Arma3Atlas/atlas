@@ -11,7 +11,7 @@ _neighbors = _self getVariable "atlas_townp_neighbors";
 assert(count _neighbors > 0); // sooo... what neighbor called us?
 
 private _myside = _self getVariable "atlas_townp_owner";
-private _opensides = (_self getVariable "atlas_townp_open_to") + [];
+private _opensides = (_self getVariable "atlas_townp_perm_open_to") + [];
 _opensides pushBackUnique _myside;
 
 private _count = { 
@@ -20,7 +20,12 @@ private _count = {
 	_myside != _nside;
 } count _neighbors;
 
-systemchat format ["town.neighborupdate town %1 myside %2 opensides %3 count %4",_self,_myside,_opensides,_count];
+format ["town.neighborupdate town %1 myside %2 opensides %3 count %4",_self,_myside,_opensides,_count]
+call atlas_debugout;
+
+_self setvariable ["atlas_townp_open_to",_opensides,true];
+{ [_x,_opensides] call (_x getvariable "atlas_obj_open_to"); } 
+foreach (_self getvariable "atlas_townp_objectives");
 
 // No longer at the front
 if (_count == 0 && _self getvariable "atlas_townp_active") then {
@@ -28,8 +33,6 @@ if (_count == 0 && _self getvariable "atlas_townp_active") then {
 };
 // Now at the front
 if (_count > 0) then {
-	{ [_x,_opensides] call (_x getvariable "atlas_obj_open_to"); } 
-	foreach (_self getvariable "atlas_townp_objectives");
 	if (!(_self getvariable "atlas_townp_active")) then {
 		[_self,true] call (_self getvariable "atlas_town_enable");
 	};
