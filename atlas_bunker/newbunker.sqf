@@ -6,6 +6,8 @@ if (isserver) then {
 	_self setvariable ["atlas_objp_active",false,true];
 	_self setvariable ["atlas_objp_currentowner",_initialowner,true];
 	_self setvariable ["atlas_objp_capturingsides",[_initialowner],true];
+	_self setvariable ["atlas_objp_capturer",civilian,true];
+	_self setvariable ["atlas_objp_captureprogress",0,true];
 };
 // interface functions
 _self setvariable ["atlas_obj_draw",atlas_obj_bunker_draw];
