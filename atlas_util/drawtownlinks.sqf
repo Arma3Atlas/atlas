@@ -17,27 +17,19 @@ for [{_i = 0}, {_i < count _towns}, {_i=_i+1}] do {
 		if (_towns find _town_b > _i) then {
 		
 		// draw marker from _town_a to _town_b
-
 		_distanceTown_a_to_b = _town_a distance _town_b;
-		x_distanceTown_a_to_b = _distanceTown_a_to_b;
 		_midPoint = (getPos _town_a vectoradd getPos _town_b) vectorMultiply 0.5;
-		x_midPoint = _midPoint;
-		
+	
 		private _markername = format ["atlas_marker_%1",call atlas_util_uid];
 		_markerstr = createMarker [_markername,[0,0]];
 		_markerstr setMarkerShape "RECTANGLE";
-		_markername setMarkerSize [100, 200];
-		
 		_markerstr setMarkerPos _midPoint;
 		
 		_dir = _town_a getDir _town_b;
-		x_vDir = _dir;
-		
 		_markerstr setMarkerDir _dir;
 		
-		
 		_markerlen = (_town_a distance2d _town_b) - 400;
-		_markername setMarkerSize [100, _markerlen / 2];
+		_markername setMarkerSize [20, _markerlen / 2];
 			
 
 		};
