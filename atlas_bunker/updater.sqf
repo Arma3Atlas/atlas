@@ -41,10 +41,11 @@ if (count list _trg == 0) exitwith {
 };
 
 if (_newside == civilian) exitwith {};
-_self setvariable ["atlas_objp_captureprogress",_progress,true];
 
 private _capsides = _self getVariable "atlas_objp_capturingsides";
 if (! (_newside in _capsides)) exitwith {};
+
+_self setvariable ["atlas_objp_captureprogress",_progress,true];
 
 if (_progress < 12) exitwith {};        // MAGIC NUMBER for duration here. multiplies with call interval from update.sqf
 // probable todo: base off of "time"
