@@ -26,11 +26,14 @@ if (_count == 0 && _self getvariable "atlas_townp_active") then {
 	[_self,false] call (_self getvariable "atlas_town_enable");
 };
 // Now at the front
-if (_count > 0 && !(_self getvariable "atlas_townp_active")) then {
-	{ [_x,_opensides] call (_x getvariable "atlas_obj_open_to") } 
-	  foreach (_self getvariable "atlas_townp_objectives");
-	[_self,true] call (_self getvariable "atlas_town_enable");
+if (_count > 0) then {
+	{ [_x,_opensides] call (_x getvariable "atlas_obj_open_to"); } 
+	foreach (_self getvariable "atlas_townp_objectives");
+	if (!(_self getvariable "atlas_townp_active")) then {
+		[_self,true] call (_self getvariable "atlas_town_enable");
+	};
 };
+
 [_self] call (_self getvariable "atlas_town_draw");
 
 //systemchat format ["town(%1) neighborupdate(%2), count(%3)",_self,_neighbor,_count];
