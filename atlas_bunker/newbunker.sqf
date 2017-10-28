@@ -38,20 +38,3 @@ _self setvariable ["atlas_objp_markerstr",_markerstr];
 
 [_self] call (_self getVariable "atlas_obj_draw");  // = atlas_obj_bunker_draw
 
-
-//debug - loki cheatsheet//
-//_allVarsTrigger = allVariables _self;
-//x_allVarsTrigger = _allVarsTrigger;
-//hint format ["_self %1",_allVarsTrigger];
-//hint format ["_markerstr: %1",_markerstr];
-
-
-
-
-
-
-
-
-
-
-

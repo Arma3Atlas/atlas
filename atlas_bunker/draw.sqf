@@ -35,8 +35,3 @@ x_self = _self;
 x_newside = _newside;
 x_enabled = _enabled;
 
-//hint format ["_markerstr: %1",_markerstr];
-
-// location markers for the objectives
-//do we want them? y/n
-//https://community.bistudio.com/wiki/cfgMarkers

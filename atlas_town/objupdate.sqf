@@ -1,5 +1,5 @@
 if (!isserver) exitwith {};
-hint ("town::objupdate " + str _this);
+("town::objupdate " + str _this) call atlas_debugout;
 
 params ["_self","_objective","_newside"];
 
