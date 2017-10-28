@@ -1,5 +1,9 @@
 params ["_self","_norecursive"];
 
+if (isserver) then {
+    [_self] remoteexeccall ["atlas_town_draw",-2,false];
+};
+
 private _newside = _self getvariable "atlas_townp_owner";
 private _markername = _self getVariable "atlas_townp_markername";
 

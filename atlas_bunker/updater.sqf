@@ -34,7 +34,7 @@ if (! (_newside in _capsides)) exitwith {};
 // This is where we'll start the longer capture process with timers, etc.
 // Currently simplified for testing
 
-_self setvariable ["atlas_objp_currentowner", _newside];
+_self setvariable ["atlas_objp_currentowner", _newside,true];
 
 _parent = _self getvariable "atlas_objp_parent";
 [_parent, _self, _newside] call (_parent getvariable "atlas_town_objupdate");

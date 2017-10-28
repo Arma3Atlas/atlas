@@ -1,10 +1,12 @@
 params ["_self","_neighbors","_objectives","_initialowner"];
 
-_self setvariable ["atlas_townp_owner",_initialowner];
+if (isServer) then {
+	_self setvariable ["atlas_townp_owner",_initialowner,true];
+	_self setvariable ["atlas_townp_active", false, true];
+	_self setvariable ["atlas_townp_open_to",[],true];	// who can capture
+};
 _self setvariable ["atlas_townp_objectives",_objectives];
 _self setvariable ["atlas_townp_neighbors",_neighbors];
-_self setvariable ["atlas_townp_active", false];
-_self setvariable ["atlas_townp_open_to",[]];	// who can capture
 
 _self setvariable ["atlas_town_draw", atlas_town_draw];
 _self setvariable ["atlas_town_enable",atlas_town_enable];
@@ -22,12 +24,11 @@ foreach _objectives;
 
 // Set up marker(s)
 _nearLoc = nearestLocation [_self, ""];
-_self setvariable ["atlas_townp_nearloc",_nearLoc];  // in case we need it
 
 private _markername = format ["atlas_marker_%1",call atlas_util_uid];
 
 _self setvariable ["atlas_townp_markername", _markername];
-_markerstr = createMarker [_markername, position _nearLoc];
+_markerstr = createmarkerlocal [_markername, position _nearLoc];
 _markerstr setMarkerShape "RECTANGLE";
 _markerstr setMarkerSize [400,400];
 _markerstr setMarkerAlpha 0.5;

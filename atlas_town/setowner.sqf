@@ -1,6 +1,6 @@
 params [ "_self","_newside"];
 
-_self setvariable ["atlas_townp_owner",_newside];
+_self setvariable ["atlas_townp_owner",_newside,true];
 
 {
 	[_x,_newside] call (_x getvariable "atlas_obj_setowner");

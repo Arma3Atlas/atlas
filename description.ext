@@ -1,0 +1,32 @@
+class CfgRemoteExec
+{        
+    // List of script functions allowed to be sent from client via remoteExec
+    class Functions
+    {
+        // State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
+        mode = 2;
+        // Ability to send jip messages: 0-disabled, 1-enabled (default)
+        jip = 1;
+
+        class BIS_fnc_effectKilledAirDestruction {};
+        class BIS_fnc_effectKilledSecondaries {};
+        class BIS_fnc_objectVar {};        
+        class BIS_fnc_debugConsoleExec {};
+
+        /*
+        class YourFunction1
+        {
+            allowedTargets=0; // can target anyone (default) 1=clients 2=server
+            jip = 0; // sending jip messages is disabled for this function (overrides settings in the Functions class)
+        };*/
+        class atlas_town_draw {};
+        class atlas_obj_bunker_draw{};
+    };
+    // List of script commands allowed to be sent from client via remoteExec
+    class Commands
+    {
+        /*your commands here*/
+        class YourCommand1 { allowedTargets=0; jip=0; } // can target anyone, sending jip is turned off (overrides settings in the Commands class)
+    };
+};
+

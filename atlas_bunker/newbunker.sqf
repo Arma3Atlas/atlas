@@ -2,10 +2,11 @@ params ["_self","_parent","_initialowner"];
 
 // internal variables
 _self setvariable ["atlas_objp_parent",_parent];
-_self setvariable ["atlas_objp_active",false];
-_self setvariable ["atlas_objp_currentowner",_initialowner];
-_self setvariable ["atlas_objp_capturingsides",[_initialowner]];
-
+if (isserver) then {
+	_self setvariable ["atlas_objp_active",false,true];
+	_self setvariable ["atlas_objp_currentowner",_initialowner,true];
+	_self setvariable ["atlas_objp_capturingsides",[_initialowner],true];
+};
 // interface functions
 _self setvariable ["atlas_obj_draw",atlas_obj_bunker_draw];
 _self setvariable ["atlas_obj_enable",atlas_obj_bunker_enable];
@@ -14,19 +15,23 @@ _self setvariable ["atlas_obj_setowner",atlas_obj_bunker_setowner];
 _self setvariable ["atlas_obj_open_to",atlas_obj_bunker_open_to];
 
 // Trigger
-_trg = createTrigger ["EmptyDetector", getpos _self];
+// todo: make server only - replace markertotrigger below
+_trg = createTrigger ["EmptyDetector", getpos _self, false];
 _trg setTriggerArea [5, 5, 0, false];
 _trg setTriggerActivation ["ANY", "PRESENT", true];
 
-// todo: find a better way to pass _self than relying on vehicleVarName
-_updatecall = format ["[%1] call atlas_obj_bunkerp_update", vehicleVarName _self];
-_trg setTriggerStatements ["this", _updatecall, ""];
+if (isserver) then {
+	// This sets up the entrypoint from which most function calls originate
+	// todo: find a better way to pass _self than relying on vehicleVarName
+	private _updatecall = format ["[%1] call atlas_obj_bunkerp_update", vehicleVarName _self];
+	_trg setTriggerStatements ["this", _updatecall, ""];
+};
 
 _self setvariable ["atlas_objp_trigger", _trg];
 
 // Marker
 private _markername = format ["atlas_marker_%1",call atlas_util_uid];
-private _markerstr = [_markername, _trg] call BIS_fnc_markerToTrigger;
+private _markerstr = [_markername, _trg, true] call BIS_fnc_markerToTrigger;
 _self setvariable ["atlas_objp_markerstr",_markerstr];
 
 [_self] call (_self getVariable "atlas_obj_draw");  // = atlas_obj_bunker_draw

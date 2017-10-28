@@ -2,6 +2,7 @@ params ["_self","_side"];
 
 _sidesref = _self getVariable "atlas_townp_open_to";
 _sidesref pushBackUnique _side;
+_self setvariable ["atlas_townp_open_to",_sidesref,true];  // need this line only for the broadcast
 
 private _opensides = _sidesref + [];
 _opensides pushBackUnique (_self getVariable "atlas_townp_owner");

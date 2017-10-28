@@ -1,5 +1,9 @@
 params ["_self"];
 
+if (isserver) then {
+    [_self] remoteexeccall ["atlas_obj_bunker_draw",-2,false];
+};
+
 _markerstr = _self getvariable "atlas_objp_markerstr";
 _newside = _self getvariable "atlas_objp_currentowner";
 

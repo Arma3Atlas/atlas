@@ -1,6 +1,6 @@
 params ["_self","_activate"];
 // todo typecheck _activate
-_self setVariable ["atlas_townp_active",_activate];
+_self setVariable ["atlas_townp_active",_activate,true];
 
 {
 	[_x,_activate] call (_x getvariable "atlas_obj_enable");
