@@ -53,7 +53,6 @@ _self setvariable ["atlas_objp_currentowner", _newside,true];
 
 _parent = _self getvariable "atlas_objp_parent";
 [_parent, _self, _newside] call (_parent getvariable "atlas_town_objupdate");
-//_self setvariable ["atlas_townp_open_to",[]];	// who can capture
 
 //marker update
 [_self] call (_self getvariable "atlas_obj_draw");

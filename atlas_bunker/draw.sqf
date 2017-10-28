@@ -7,6 +7,13 @@ if (isserver) then {
 _markerstr = _self getvariable "atlas_objp_markerstr";
 _newside = _self getvariable "atlas_objp_currentowner";
 
+_opento = _self getvariable "atlas_objp_capturingsides";
+if (!(side player in _opento)) exitwith {
+    _markerstr setmarkeralpha 0;
+    _markerstr setmarkercolor "colorYellow";
+};
+
+
 _color = switch (_newside) do {
     case west: { "ColorWest" };
     case east: { "ColorEast" };
