@@ -1,3 +1,4 @@
+if (!isserver) exitwith {};
 params ["_self","_neighbor"];
 
 /*

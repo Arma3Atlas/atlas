@@ -6,6 +6,7 @@ Passed Arguments:
 */
 
 params ["_self","_handle"];
+if (!isserver) exitwith {};
 
 private _trg = _self getvariable "atlas_objp_trigger";
 

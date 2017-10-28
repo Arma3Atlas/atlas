@@ -1,3 +1,4 @@
+if (!isserver) exitwith {};
 params [ "_self","_newside"];
 
 _self setvariable ["atlas_townp_owner",_newside,true];

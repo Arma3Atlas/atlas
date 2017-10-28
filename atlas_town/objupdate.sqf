@@ -1,3 +1,4 @@
+if (!isserver) exitwith {};
 hint ("town::objupdate " + str _this);
 
 params ["_self","_objective","_newside"];
