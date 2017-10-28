@@ -1,6 +1,5 @@
-params ["_self","_side"];
-
 if (!isserver) exitwith {};
+params ["_self","_side"];
 
 _sidesref = _self getVariable "atlas_townp_open_to";
 _sidesref pushBackUnique _side;

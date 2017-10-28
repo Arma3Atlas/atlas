@@ -1,4 +1,6 @@
+if (!isserver) exitwith {};
 params ["_self","_sides"];
+
 _self setvariable ["atlas_objp_capturingsides",_sides,true];
 
 systemchat str _this;

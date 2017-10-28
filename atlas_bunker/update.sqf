@@ -1,5 +1,6 @@
 
 params ["_self"];
+if (!isserver) exitwith {};
 
 // If town is not capturable, disregard anything entering the trigger area
 private _enabled = _self getvariable "atlas_objp_active";

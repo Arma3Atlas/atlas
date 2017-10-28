@@ -1,5 +1,7 @@
+if (!isserver) exitwith {};
 params ["_self","_activate"];
 // todo typecheck _activate
+
 _self setVariable ["atlas_townp_active",_activate,true];
 
 {
