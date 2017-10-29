@@ -47,8 +47,10 @@ if (! (_newside in _capsides)) exitwith {};
 
 _self setvariable ["atlas_objp_captureprogress",_progress,true];
 
-if (_progress < 12) exitwith {};        // MAGIC NUMBER for duration here. multiplies with call interval from update.sqf
 // probable todo: base off of "time"
+if (_progress < 12) exitwith {};        // MAGIC NUMBER for duration here. multiplies with call interval from update.sqf
+
+if (_self getvariable "atlas_objp_currentowner" == _newside ) exitwith {};
 
 _self setvariable ["atlas_objp_currentowner", _newside,true];
 
