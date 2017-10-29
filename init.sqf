@@ -30,6 +30,7 @@ atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
 atlas_util_drawtownlinks = compile preprocessFileLineNumbers "atlas_util\drawtownlinks.sqf";
 atlas_debugout = compile preprocessfilelinenumbers "atlas_util\debugout.sqf";
 atlas_debugout_enabled = true;
+atlas_errorout = compile preprocessfilelinenumbers "atlas_util\errorout.sqf";
 atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 
 //west start
