@@ -30,6 +30,7 @@ atlas_util_uid = compile preprocessFileLineNumbers "atlas_util\uid.sqf";
 atlas_util_drawtownlinks = compile preprocessFileLineNumbers "atlas_util\drawtownlinks.sqf";
 atlas_debugout = compile preprocessfilelinenumbers "atlas_util\debugout.sqf";
 atlas_debugout_enabled = true;
+atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 
 //west start
 [gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
@@ -48,4 +49,6 @@ atlas_debugout_enabled = true;
 [paros,east] call (gravia getvariable "atlas_town_perm_open_to");
 [paros,true] call (paros getvariable "atlas_town_enable");
 
-gravia call atlas_util_drawtownlinks;
+// All towns defined, now we can build any multitown stuff
+[gravia] call atlas_alltowns;
+call atlas_util_drawtownlinks;
