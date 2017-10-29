@@ -6,8 +6,8 @@ assert (count _towns > 0);
 // can use better for syntax that I can't remember 
 for "_i" from 0 to (count _towns) - 1 do  {
 	private _town_a = _towns select _i;
-	private _neighb = [_town_a] call (_town_a getvariable "atlas_town_getneighbors");
-	{
+	[_town_a] call (_town_a getvariable "atlas_town_getneighbors")
+	apply {
 		private _town_b = _x;
 		if (_towns find _town_b > _i) then {
 		
@@ -28,7 +28,7 @@ for "_i" from 0 to (count _towns) - 1 do  {
 			
 
 		};
-	} foreach _neighb;
+	};
 
 };
 

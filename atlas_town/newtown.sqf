@@ -19,9 +19,7 @@ _self setvariable ["atlas_town_getneighbors",{(_this select 0) getvariable "atla
 
 // Objectives
 // Not dealing with multiple objective types yet
-{ [_x,_self,_initialowner] call atlas_obj_bunker_new; }
-foreach _objectives;
-
+_objectives apply { [_x,_self,_initialowner] call atlas_obj_bunker_new; };
 
 // Set up marker(s)
 _nearLoc = nearestLocation [_self, ""];

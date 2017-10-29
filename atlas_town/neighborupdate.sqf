@@ -24,8 +24,9 @@ format ["town.neighborupdate town %1 myside %2 opensides %3 count %4",_self,_mys
 call atlas_debugout;
 
 _self setvariable ["atlas_townp_open_to",_opensides,true];
-{ [_x,_opensides] call (_x getvariable "atlas_obj_open_to"); } 
-foreach (_self getvariable "atlas_townp_objectives");
+(_self getvariable "atlas_townp_objectives") apply { 
+	[_x,_opensides] call (_x getvariable "atlas_obj_open_to"); 
+};
 
 // No longer at the front
 if (_count == 0 && _self getvariable "atlas_townp_active") then {

@@ -9,6 +9,8 @@ private _opensides = _sidesref + [];
 // TODO: _opensides should include sides of neighbors
 _opensides pushBackUnique (_self getVariable "atlas_townp_owner");
 _self setvariable ["atlas_townp_open_to",_opensides,true];
-{
+(_self getVariable "atlas_townp_objectives") apply {
 	[_x,_opensides] call (_x getVariable "atlas_obj_open_to");
-} foreach (_self getVariable "atlas_townp_objectives");
+};
+
+nil;
