@@ -9,8 +9,8 @@ _newside = _self getvariable "atlas_objp_currentowner";
 
 _opento = _self getvariable "atlas_objp_capturingsides";
 if (!(side player in _opento)) exitwith {
-    _markerstr setmarkeralpha 0;
-    _markerstr setmarkercolor "colorYellow";
+    _markerstr setmarkerAlphaLocal 0;
+    _markerstr setmarkerColorLocal "colorYellow";
 };
 
 
@@ -20,13 +20,13 @@ _color = switch (_newside) do {
     default { "ColorGUER" };
 };
 
-_markerstr setMarkerColor _color;
+_markerstr setMarkerColorLocal _color;
 
 _enabled = _self getvariable "atlas_objp_active";
 if (!_enabled) then {
-	_markerstr setMarkerAlpha 0;
+	_markerstr setmarkerAlphaLocal 0;
 } else {
-	_markerstr setMarkerAlpha 0.75;
+	_markerstr setMarkerAlphaLocal 0.75;
 };
 
 //debug - loki cheatsheet//

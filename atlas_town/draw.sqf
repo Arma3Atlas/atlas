@@ -8,8 +8,8 @@ private _newside = _self getvariable "atlas_townp_owner";
 private _markername = _self getVariable "atlas_townp_markername";
 private _opento = _self getvariable "atlas_townp_open_to";
 if (!(side player in _opento)) exitwith {
-    _markername setmarkeralpha 0.2;
-    _markername setmarkercolor "colorYellow";
+    _markername setmarkerAlphaLocal 0.2;
+    _markername setMarkerColorLocal  "colorYellow";
 };
 
 private _alpha = 0.2;
@@ -17,14 +17,14 @@ if (_self getVariable "atlas_townp_active") then {
     _alpha = 0.5;
 };
 
-_markername setMarkerAlpha _alpha;
+_markername setMarkerAlphaLocal _alpha;
 
 _color = switch (_newside) do {
     case west: { "ColorWest" };
     case east: { "ColorEast" };
 	default { "ColorGUER" };
 };
-_markername setMarkerColor _color; 
+_markername setMarkerColorLocal _color; 
 
 // Objectives
 if (!isNil "_norecursive" && {_norecursive}) exitwith {};
