@@ -30,3 +30,17 @@ class CfgRemoteExec
     };
 };
 
+
+
+
+#include "atlas_respawn\RespawnVehicles.hpp"
+
+
+
+class CfgFunctions
+{
+	class Atlas
+	{
+        #include "atlas_respawn\Functions.hpp"
+    }
+}
