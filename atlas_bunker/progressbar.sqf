@@ -19,7 +19,7 @@ private _bar = findDisplay 46 ctrlCreate ["RscProgress", -1];
 _bar ctrlSetPosition [0,0,1,0.01]; 
 
 while { 
-	player in list _trigger > 0 
+	player in list _trigger 
 	&& _self getvariable "atlas_objp_capturer" == side player
 	&& _self getvariable "atlas_objp_currentowner" != side player
 } do {

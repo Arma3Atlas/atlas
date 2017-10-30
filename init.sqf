@@ -35,8 +35,6 @@ atlas_debugout_enabled = true;
 atlas_errorout = compile preprocessfilelinenumbers "atlas_util\errorout.sqf";
 atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 
-//progBar
-atlas_proBar = compile preprocessFileLineNumbers "atlas_util\progressBar.sqf";
 
 //testTowns
 //west start
