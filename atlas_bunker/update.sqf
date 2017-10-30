@@ -10,3 +10,4 @@ _self setVariable ["atlas_objp_updater_running",true];
 
 [atlas_obj_bunkerp_updater,5,_self] call CBA_fnc_addPerFrameHandler;
 
+[10] spawn atlas_proBar;

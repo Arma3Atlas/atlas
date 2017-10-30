@@ -33,6 +33,10 @@ atlas_debugout_enabled = true;
 atlas_errorout = compile preprocessfilelinenumbers "atlas_util\errorout.sqf";
 atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 
+//progBar
+atlas_proBar = compile preprocessFileLineNumbers "atlas_util\progressBar.sqf";
+
+//testTowns
 //west start
 [gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;
 [gravia,west] call (gravia getvariable "atlas_town_perm_open_to");
