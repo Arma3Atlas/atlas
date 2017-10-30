@@ -16,6 +16,8 @@ atlas_obj_bunker_setowner = compile preprocessFileLineNumbers "atlas_bunker\seto
 atlas_obj_bunkerp_update = compile preprocessFileLineNumbers "atlas_bunker\update.sqf";
 atlas_obj_bunkerp_updater = compile preprocessFileLineNumbers "atlas_bunker\updater.sqf";
 atlas_obj_bunker_open_to = compile preprocessFileLineNumbers "atlas_bunker\open_to.sqf";
+atlas_objp_bunker_progressbar = compile preprocessFileLineNumbers "atlas_bunker\progressbar.sqf";
+atlas_objp_bunker_captureduration = 12;
 
 // Town functions
 atlas_town_new = compile preprocessFileLineNumbers "atlas_town\newtown.sqf";

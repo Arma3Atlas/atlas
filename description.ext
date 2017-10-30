@@ -6,7 +6,7 @@ class CfgRemoteExec
         // State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
         mode = 2;
         // Ability to send jip messages: 0-disabled, 1-enabled (default)
-        jip = 1;
+        jip = 0;
 
         class BIS_fnc_effectKilledAirDestruction {};
         class BIS_fnc_effectKilledSecondaries {};
@@ -21,6 +21,7 @@ class CfgRemoteExec
         };*/
         class atlas_town_draw {};
         class atlas_obj_bunker_draw{};
+        class atlas_objp_bunker_progressbar{};
     };
     // List of script commands allowed to be sent from client via remoteExec
     class Commands

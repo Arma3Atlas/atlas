@@ -46,9 +46,11 @@ private _capsides = _self getVariable "atlas_objp_capturingsides";
 if (! (_newside in _capsides)) exitwith {};
 
 _self setvariable ["atlas_objp_captureprogress",_progress,true];
+[_self] remoteexec ["atlas_objp_bunker_progressbar",0,false];
+
 
 // probable todo: base off of "time"
-if (_progress < 12) exitwith {};        // MAGIC NUMBER for duration here. multiplies with call interval from update.sqf
+if (_progress < atlas_objp_bunker_captureduration) exitwith {};
 
 if (_self getvariable "atlas_objp_currentowner" == _newside ) exitwith {};
 
