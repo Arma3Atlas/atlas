@@ -57,3 +57,7 @@ atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 // All towns defined, now we can build any multitown stuff
 [gravia] call atlas_alltowns;
 call atlas_util_drawtownlinks;
+
+
+
+

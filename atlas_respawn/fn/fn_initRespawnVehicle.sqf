@@ -1,4 +1,4 @@
-_vehicle = _this;
+params ["_vehicle"];
 _classname = typeOf _vehicle;
 
 assert (isClass (missionConfigFile >> "Atlas_Respawn_Vehicles" >> "Vehicles" >> _classname ));

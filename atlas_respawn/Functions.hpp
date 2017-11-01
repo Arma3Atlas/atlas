@@ -1,12 +1,15 @@
 
-class Mining
+class Respawn
 {
+	tag = "Atlas_Respawn";
 	file = "atlas_respawn\fn";
 	
 
 	class init {postInit = 1;};
-	class checkIfRespawnable {};
-	class initRespawnVehicle {};
 	
+	class initRespawnVehicle {};
+	class isRespawnable{};
 	
 }
+
+
