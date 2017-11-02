@@ -57,3 +57,16 @@ atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 // All towns defined, now we can build any multitown stuff
 [gravia] call atlas_alltowns;
 call atlas_util_drawtownlinks;
+
+
+//guiTest
+atlas_guiTest = compile preprocessFileLineNumbers "atlas_gui\guiBase.sqf"; 
+
+player addAction ["guiTest",atlas_guiTest];
+player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
+
+
+
+
+
+
