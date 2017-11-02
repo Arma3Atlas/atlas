@@ -8,8 +8,11 @@ class Respawn
 	class init {postInit = 1;};
 	
 	class initRespawnVehicle {};
-	class isRespawnable{};
-	
+	class isRespawnable {};
+	class getAvailableSpawnpoints {};
+	class refillStation {};
+	class respawnAtPlace {};
+	class subtractBody {};
 }
 
 

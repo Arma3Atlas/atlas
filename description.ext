@@ -39,7 +39,7 @@ class CfgRemoteExec
 
 class CfgFunctions
 {
-	class Atlas_respawn
+	class Atlas
 	{
         #include "atlas_respawn\Functions.hpp"
     }
