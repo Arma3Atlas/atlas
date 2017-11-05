@@ -32,19 +32,11 @@ Save (interface)
 - Implemented only much later, if ever
 - Stores data to profile, such that it can be loaded back in
 
-Update (atlas_obj_bunker_update) **PRIVATE**
+Update (atlas_objp_bunker_update) **PRIVATE**
+UpdateCapturing (atlas_objp_bunker_updater) **PRIVATE**
 - gets called with bunker object by trigger
-- The bunkerobject should have a getvariable entry for the trigger, and this function uses list to get the population.
-- Notes and stores how many people (from each side) are in its zone
-- If no non-owning players are present, reset the capture scores? (game design question)
-- If non-owning players are present, starts the process for running UpdateCapturing every 5 seconds.  (Cba timed eventhandler - if present else spawn?)
-To check: Does a unit dying inside cause it to trigger, such that killing people inside correctly updates population?
+- The bunkerobject has a getvariable entry for the trigger, and this function uses list to get the population.
 
-UpdateCapturing (not implemented yet)
-- Gets called with the bunker object.
-- If there is reason to continue, set itself up to run again in 5 seconds
-- Adds ‘capture points’ in whatever form that takes, stored in the bunker object.
-- If the capture points reach the threshold of capture, call BunkerCaptured
 BunkerCaptured
 - Sets ownership of the bunker
 - Calls town’s TBD function to notify a change in ownership
