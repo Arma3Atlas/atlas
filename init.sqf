@@ -34,7 +34,8 @@ atlas_debugout = compile preprocessfilelinenumbers "atlas_util\debugout.sqf";
 atlas_debugout_enabled = true;
 atlas_errorout = compile preprocessfilelinenumbers "atlas_util\errorout.sqf";
 atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
-
+atlas_util_ownsall = compile preprocessFileLineNumbers "atlas_util\ownsall.sqf";
+atlas_util_towntrace = compile preprocessFileLineNumbers "atlas_util\tracetowns.sqf";
 
 //testTowns
 //west start
