@@ -8,7 +8,7 @@ private _resistance = 0;
 
 
 _towns apply {
-	[_x] call (_x getVariable "atlas_obj_getowner");
+	[_x] call (_x getVariable "atlas_town_getowner");
 } apply {
 	switch (_x) do {
 		case west: {_west = _west + 1;};
