@@ -12,4 +12,5 @@ _maxBodies = getNumber (missionConfigFile >> "Atlas_Respawn_Vehicles" >> "Vehicl
 _vehicle setVariable ["atlas_respawn_bodiesRemaining",_maxBodies,true]; //broadcast to all possibly change later
 
 _vehicle setVariable ["atlas_respawn_maxBodies",_maxBodies]; // redundant just get from config
-atlas_respawn_spawnVehicleList pushBack _vehicle;
+atlas_respawn_spawnVehicleList pushBackUnique _vehicle;
+Publicvariable "atlas_respawn_spawnVehicleList";
