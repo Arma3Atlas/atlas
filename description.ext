@@ -44,3 +44,12 @@ class CfgFunctions
         #include "atlas_respawn\Functions.hpp"
     }
 }
+
+
+//guiTest
+//generic base class and color lists
+#include "atlas_gui\defines.hpp"
+#include "atlas_gui\colors.hpp"
+
+//BASE GUI
+#include "atlas_gui\guiBase.hpp"

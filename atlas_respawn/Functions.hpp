@@ -13,6 +13,8 @@ class Respawn
 	class refillStation {};
 	class respawnAtPlace {};
 	class subtractBody {};
+
+	class respawnDialogOpened {};
 }
 
 
