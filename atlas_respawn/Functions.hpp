@@ -5,7 +5,7 @@ class Respawn
 	file = "atlas_respawn\fn";
 	
 
-	class init {postInit = 1;};
+	class init {preInit = 1;};
 	
 	class initRespawnVehicle {};
 	class isRespawnable {};
