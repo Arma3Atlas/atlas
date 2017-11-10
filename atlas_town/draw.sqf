@@ -8,13 +8,13 @@ private _newside = _self getvariable "atlas_townp_owner";
 private _markername = _self getVariable "atlas_townp_markername";
 private _opento = _self getvariable "atlas_townp_open_to";
 if (!(side player in _opento)) exitwith {
-    _markername setmarkerAlphaLocal 0.5;
+    _markername setmarkerAlphaLocal 0.2;
     _markername setMarkerColorLocal  "colorYellow";
 };
 
-private _alpha = 0.5;
+private _alpha = 0.2;
 if (_self getVariable "atlas_townp_active") then {
-    _alpha = 1;
+    _alpha = 0.5;
 };
 
 _markername setMarkerAlphaLocal _alpha;

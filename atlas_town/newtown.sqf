@@ -29,12 +29,10 @@ private _markername = format ["atlas_marker_%1",call atlas_util_uid];
 
 _self setvariable ["atlas_townp_markername", _markername];
 _markerstr = createmarkerlocal [_markername, position _nearLoc];
-//_markerstr setMarkerShape "ELLIPSE";
-//_markerstr setMarkerSize [400,400];
-_markerstr setMarkerType "mil_circle";
-_markerstr setMarkerSize [1.25,1.25];
+_markerstr setMarkerShape "RECTANGLE";
+_markerstr setMarkerSize [400,400];
 _markerstr setMarkerAlpha 0.5;
-
+//_markerstr setMarkerType "hd_warning";
 //_markerstr setMarkerText _locName;
 
 [_self] call (_self getvariable "atlas_town_draw");
