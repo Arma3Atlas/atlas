@@ -1,0 +1,20 @@
+//REMOVE ME /////////////////////////
+allowFunctionsRecompile = 1;
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+////////////////////////////////////
+
+
+
+
+//ATLAS
+#include "ATLAS\description.ext"
+
+class CfgFunctions
+{
+	//ATLAS
+	#include "ATLAS\cfgFunctions.hpp"
+
+};
+
+
