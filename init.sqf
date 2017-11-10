@@ -67,7 +67,7 @@ player addAction ["guiTest",atlas_guiTest];
 player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
 
 //ai spawnTests
-//[] spawn ATLAS_fnc_ai_start;
+[] spawn ATLAS_fnc_ai_start;
 
 //debug
 
