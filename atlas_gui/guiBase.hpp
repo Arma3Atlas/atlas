@@ -40,6 +40,8 @@ class atlas_gui_listBox_1500: ATLAS_RscListbox
 {
 	idc = 1500;
 	text = "listBox_1"; //--- ToDo: Localize;
+	onLBSelChanged = "_this call Atlas_fnc_respawn_LbSelChanged";
+	onLBDblClick = "[(lbCurSel 1500),player] call Atlas_fnc_respawnAtPlace;";
 	x = 0.308499 * safezoneW + safezoneX;
 	y = 0.247082 * safezoneH + safezoneY;
 	w = 0.0705531 * safezoneW;

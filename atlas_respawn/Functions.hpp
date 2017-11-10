@@ -15,6 +15,7 @@ class Respawn
 	class subtractBody {};
 
 	class respawnDialogOpened {};
+	class respawn_LbSelChanged {};
 }
 
 

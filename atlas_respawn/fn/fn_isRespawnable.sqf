@@ -11,7 +11,7 @@ _callerSide = side _caller;
 _isRespawnable = (
     (_vehicle getvariable ["atlas_respawn_bodiesRemaining",0] > 0) && 
     (alive _vehicle) && 
-    (_vehicle != vehicle _caller) &&
+    (_caller == vehicle _caller) &&
     !(_callerSide isEqualTo "ENEMY") &&
     (_vehicle getvariable ["atlas_respawn_permSide","ENEMY"] isEqualTo _callerSide) &&
     (side _vehicle isEqualTo _callerSide || side _vehicle isEqualTo civilian) && 
