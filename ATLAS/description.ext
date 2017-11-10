@@ -1,0 +1,18 @@
+//REMOVE ME /////////////////////////
+allowFunctionsRecompile = 1;
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+////////////////////////////////////
+
+
+
+
+//guiTest
+//generic base class and color lists
+#include "atlas_gui\defines.hpp"
+#include "atlas_gui\colors.hpp"
+
+//BASE GUI
+#include "atlas_gui\guiBase.hpp"
+
+

@@ -1,0 +1,13 @@
+
+#include "ATLAS\initPlayerLocal.sqf"
+
+
+
+
+
+
+
+
+
+
+
