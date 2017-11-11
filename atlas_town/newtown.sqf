@@ -8,6 +8,8 @@ if (isServer) then {
 };
 _self setvariable ["atlas_townp_objectives",_objectives];
 _self setvariable ["atlas_townp_neighbors",_neighbors];
+_self setvariable ["atlas_townp_ai_once",false];
+
 
 _self setvariable ["atlas_town_draw", atlas_town_draw];
 _self setvariable ["atlas_town_enable",atlas_town_enable];

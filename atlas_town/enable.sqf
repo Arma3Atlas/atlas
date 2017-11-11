@@ -9,3 +9,8 @@ _self setVariable ["atlas_townp_active",_activate,true];
 };
 
 [_self,false] call (_self getvariable "atlas_town_draw");
+
+if (!_activate) exitwith {};
+if (_self getvariable "atlas_townp_ai_once") exitwith {};
+{[1,true,false,[50,100,150],_x select 0,[100,150,200]] execVM "ATLAS\atlas_ai\fn\RandomSpawnTown.sqf";} forEach atlas_ai_townlist_enabled;
+
