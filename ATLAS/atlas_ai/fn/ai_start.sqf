@@ -1,7 +1,9 @@
 
-hint "AI systems started";
+//hint "AI systems started";
 if (!isserver) exitwith {};
 
+//junk code remove me
+/*
 atlas_ai_townlist_enabled = [];
 atlas_ai_townlist_disabled = [];
 atlas_ai_townlist_objOwner = [];

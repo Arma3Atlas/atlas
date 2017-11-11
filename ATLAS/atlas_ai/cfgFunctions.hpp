@@ -10,13 +10,13 @@ class atlas_ai
 
 	class town_enable
 	{
-		//ATLAS_fnc_ai_start
+		//ATLAS_fnc_town_enable
 		description="Spawn/resume AI for a particular town";
 		file = "ATLAS\atlas_ai\fn\town_enable.sqf";
 	};
 	class town_disable
 	{
-		//ATLAS_fnc_ai_start
+		//ATLAS_fnc_town_disable
 		description="Spawn/resume AI for a particular town";
 		file = "ATLAS\atlas_ai\fn\town_disable.sqf";
 	};
