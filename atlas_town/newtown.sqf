@@ -8,7 +8,7 @@ if (isServer) then {
 };
 _self setvariable ["atlas_townp_objectives",_objectives];
 _self setvariable ["atlas_townp_neighbors",_neighbors];
-_self setvariable ["atlas_townp_aicalls",[ATLAS_fnc_town_enable,ATLAS_fnc_town_disable]]; // Use default value. 
+_self setvariable ["atlas_townp_aicalls",[ATLAS_fnc_town_disable,ATLAS_fnc_town_enable]]; // Use default value. 
 // Todo: provide setter which allows running another ai script instead
 
 
