@@ -10,8 +10,12 @@ _self setVariable ["atlas_townp_active",_activate,true];
 
 [_self,false] call (_self getvariable "atlas_town_draw");
 
+/*
 if (!_activate) exitwith {};
-if (_self getvariable "atlas_townp_ai_once") exitwith {};
+if (_self getvariable ["atlas_townp_ai_once",false]) exitwith {};
 _self setvariable ["atlas_townp_ai_once",true];
 [1,true,false,[50,100,150],_self,[100,150,200]] execVM "ATLAS\atlas_ai\fn\RandomSpawnTown.sqf";
+/*/
+[_self] call (_self getvariable "atlas_townp_aicalls" select _activate);
 
+//*/
