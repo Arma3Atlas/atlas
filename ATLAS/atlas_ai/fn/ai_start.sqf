@@ -5,12 +5,15 @@ if (!isserver) exitwith {};
 //gravia getvariable "atlas_townp_active";
 //atlas_ai_townlist_enabled = atlas_alltowns_townlist;
 atlas_ai_townlist_enabled = [];
+atlas_ai_townlist_disabled = [];
 
 //ai spawn tests
-//setting which towns are active to an array
+//setting which towns are active/disabled to arrays
 {
 	if (_x getvariable "atlas_townp_active") then {	
 		atlas_ai_townlist_enabled pushback _x;
+	} else {
+		atlas_ai_townlist_disabled pushback _x;
 	};
 } forEach atlas_alltowns_townlist;
 
