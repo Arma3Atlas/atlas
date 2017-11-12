@@ -31,12 +31,22 @@ class CfgRemoteExec
 };
 
 //ATLAS
-#include "ATLAS\description.ext"
+//guiTest
+//generic base class and color lists
+#include "atlas_gui\defines.hpp"
+#include "atlas_gui\colors.hpp"
+
+//BASE GUI
+#include "atlas_gui\guiBase.hpp"
 
 class CfgFunctions
 {
-	//ATLAS
-	#include "ATLAS\cfgFunctions.hpp"
+	class ATLAS 
+	{
+		tag = "ATLAS";
+	
+		#include "atlas_ai\cfgFunctions.hpp"
+
+	};
 
 };
-

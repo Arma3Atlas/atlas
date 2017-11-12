@@ -61,7 +61,7 @@ call atlas_util_drawtownlinks;
 
 
 //guiTest
-atlas_guiTest = compile preprocessFileLineNumbers "ATLAS\atlas_gui\guiBase.sqf"; 
+atlas_guiTest = compile preprocessFileLineNumbers "atlas_gui\guiBase.sqf"; 
 
 player addAction ["guiTest",atlas_guiTest];
 player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
