@@ -1,24 +1,17 @@
 
 class atlas_ai
 {
-	class ai_start
+	class ai_enable
 	{
-		//ATLAS_fnc_ai_start
-		description="ai_start: start atlas ai";
-		file = "ATLAS\atlas_ai\fn\ai_start.sqf";
-	};
-
-	class town_enable
-	{
-		//ATLAS_fnc_town_enable
+		//ATLAS_fnc_ai_enable
 		description="Spawn/resume AI for a particular town";
-		file = "ATLAS\atlas_ai\fn\town_enable.sqf";
+		file = "ATLAS\atlas_ai\fn\ai_enable.sqf";
 	};
-	class town_disable
+	class ai_disable
 	{
-		//ATLAS_fnc_town_disable
+		//ATLAS_fnc_ai_disable
 		description="Spawn/resume AI for a particular town";
-		file = "ATLAS\atlas_ai\fn\town_disable.sqf";
+		file = "ATLAS\atlas_ai\fn\ai_disable.sqf";
 	};
 
 };
