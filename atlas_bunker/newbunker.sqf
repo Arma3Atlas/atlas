@@ -8,6 +8,9 @@ if (isserver) then {
 	_self setvariable ["atlas_objp_capturingsides",[_initialowner],true];
 	_self setvariable ["atlas_objp_capturer",civilian,true];
 	_self setvariable ["atlas_objp_captureprogress",0,true];
+	_self setvariable ["atlas_objp_bunker_aicalls",	// todo: public setter
+		[atlas_obj_bunkerai_disable,atlas_obj_bunkerai_enable, atlas_obj_bunkerai_oncapture]
+	];
 };
 // interface functions
 _self setvariable ["atlas_obj_draw",atlas_obj_bunker_draw];
