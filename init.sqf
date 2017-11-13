@@ -19,9 +19,9 @@ atlas_obj_bunker_open_to = compile preprocessFileLineNumbers "atlas_bunker\open_
 atlas_objp_bunker_progressbar = compile preprocessFileLineNumbers "atlas_bunker\progressbar.sqf";
 atlas_objp_bunker_captureduration = 12;
 
-atlas_obj_bunkerai_enable = compile preprocessFileLineNumbers "atlas_bunkerai\bai_enable.sqf";
-atlas_obj_bunkerai_disable = compile preprocessFileLineNumbers "atlas_bunkerai\bai_disable.sqf";
-atlas_obj_bunkerai_oncapture = compile preprocessFileLineNumbers "atlas_bunkerai\bai_oncapture.sqf";
+atlas_obj_bunkerai_enable = compile preprocessFileLineNumbers "atlas_bunker_ai\bai_enable.sqf";
+atlas_obj_bunkerai_disable = compile preprocessFileLineNumbers "atlas_bunker_ai\bai_disable.sqf";
+atlas_obj_bunkerai_oncapture = compile preprocessFileLineNumbers "atlas_bunker_ai\bai_oncapture.sqf";
 
 
 // Town functions
