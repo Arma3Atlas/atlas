@@ -1,3 +1,6 @@
+//debug
+if (debug_AI_OFF) exitWith {};
+
 params ["_self"];
 
 format ["atlas_bunkerai_enable on %1",_self] call atlas_debugout;
@@ -10,7 +13,7 @@ format ["atlas_ai_town_enable first on town %1",_self];
 _groups = [];
 _self setvariable ["atlas_aip_groups",_groups];
 
-_myGroup = [position _self, resistance, 5] call BIS_fnc_spawnGroup;
+_myGroup = [position _self, resistance, 2] call BIS_fnc_spawnGroup;
 _groups pushback _myGroup;
 
 

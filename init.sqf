@@ -5,6 +5,9 @@ createcenter EAST;
 createcenter RESISTANCE;
 createcenter CIVILIAN;
 
+//debug
+debug_AI_OFF = false;
+
 
 // Just where this code goes in the "final product" is TBD
 // a release would use compilefinal
@@ -70,12 +73,6 @@ atlas_guiTest = compile preprocessFileLineNumbers "atlas_gui\guiBase.sqf";
 
 player addAction ["guiTest",atlas_guiTest];
 player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
-
-//debug
-
-
-
-
 
 
 

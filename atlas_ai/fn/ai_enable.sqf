@@ -1,3 +1,6 @@
+//debug
+if (debug_AI_OFF) exitWith {};
+
 params ["_self"];
 
 format ["atlas_ai_town_enable on %1",_self] call atlas_debugout;
@@ -19,4 +22,8 @@ _groups pushback _myGroup;
 
 //some arguments are optional, this is the bare minimum:
 //_myGroup = [position, side, character details] call BIS_fnc_spawnGroup;
+
+//random patrol tests
+//[group this, getPos this, number] call BIS_fnc_taskPatrol;
+[_myGroup, position _self, 50] call BIS_fnc_taskPatrol;
 
