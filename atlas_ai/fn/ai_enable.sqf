@@ -1,5 +1,5 @@
 //debug
-if (debug_AI_OFF) exitWith {};
+if (debug_ai_OFF) exitWith {};
 
 params ["_self"];
 
@@ -13,7 +13,30 @@ format ["atlas_ai_town_enable first on town %1",_self];
 _groups = [];
 _self setvariable ["atlas_aip_groups",_groups];
 
-_myGroup = [position _self, resistance, 5] call BIS_fnc_spawnGroup;
+//ai spawn placement tests
+_myPlaces = selectBestPlaces [position _self, 150, "meadow + hills", 1, 10];
+private _i = 0;
+
+//debug markers
+if !(debug_ai_spawnZonesMarkers_OFF) then {
+{
+	private _markername = format ["ai_spawnZone_%1_%2",_self, _i];
+	_markerstr = createmarkerlocal [_markername, _x select 0];
+	//_markerstr setMarkerShape "ELLIPSE";
+	//_markerstr setMarkerSize [400,400];
+	_markerstr setMarkerType "mil_circle";
+	_markerstr setMarkerSize [0.5,0.5];
+	_markerstr setMarkerAlpha 0.5;
+	_markerstr setMarkerText _markername;
+
+	_i = _i + 1;
+
+	} forEach _myPlaces;
+};
+
+_pos = _myPlaces call BIS_fnc_selectRandom;
+
+_myGroup = [_pos select 0, resistance, 5] call BIS_fnc_spawnGroup;
 _groups pushback _myGroup;
 
 

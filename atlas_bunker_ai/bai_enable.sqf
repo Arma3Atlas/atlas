@@ -1,5 +1,5 @@
 //debug
-if (debug_AI_OFF) exitWith {};
+if (debug_ai_OFF) exitWith {};
 
 params ["_self"];
 

@@ -6,7 +6,8 @@ createcenter RESISTANCE;
 createcenter CIVILIAN;
 
 //debug
-debug_AI_OFF = false;
+debug_ai_OFF = false;
+debug_ai_spawnZonesMarkers_OFF = false; 
 
 
 // Just where this code goes in the "final product" is TBD
@@ -71,8 +72,8 @@ call atlas_util_drawtownlinks;
 //guiTest
 atlas_guiTest = compile preprocessFileLineNumbers "atlas_gui\guiBase.sqf"; 
 
-player addAction ["guiTest",atlas_guiTest];
-player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
+//player addAction ["guiTest",atlas_guiTest];
+//player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
 
 
 
