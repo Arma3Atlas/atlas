@@ -11,7 +11,9 @@ _self setvariable ["atlas_aip_once",true];
 format ["atlas_ai_town_enable first on town %1",_self];
 
 _groups = [];
+_groupsVeh = [];
 _self setvariable ["atlas_aip_groups",_groups];
+_self setvariable ["atlas_aip_groups",_groupsVeh];
 
 //ai spawn placement tests
 _myPlaces = selectBestPlaces [position _self, 150, "meadow + hills", 1, 10];
@@ -33,20 +35,27 @@ if !(debug_ai_spawnZonesMarkers_OFF) then {
 
 	} forEach _myPlaces;
 };
-
+//select a random spot
 _pos = _myPlaces call BIS_fnc_selectRandom;
 
+//spawn ai ground pounders
 _myGroup = [_pos select 0, resistance, 5] call BIS_fnc_spawnGroup;
 _groups pushback _myGroup;
 
-
-//syntax: [arguments] call BIS_fnc_spawnGroup;
-//_myGroup = [position, side, character details, relative positions, list of ranks, skill range, ammo count range, randomization controls, azimuth] call BIS_fnc_spawnGroup;
-
-//some arguments are optional, this is the bare minimum:
-//_myGroup = [position, side, character details] call BIS_fnc_spawnGroup;
-
-//random patrol tests
-//[group this, getPos this, number] call BIS_fnc_taskPatrol;
+//random ground pounders patrol tests
 [_myGroup, position _self, 50] call BIS_fnc_taskPatrol;
+
+//spawn ai veh patrol tests
+//Array - 0: created vehicle (Object), 1: all crew (Array of Objects), 2: vehicle's group (Group)
+_posVeh = _myPlaces call BIS_fnc_selectRandom;
+_grpVeh = [_posVeh select 0, 180, "I_MRAP_03_hmg_F", resistance] call bis_fnc_spawnvehicle;
+_myGroupVeh = _grpVeh select 2;
+[_myGroupVeh, position _self, 75] call BIS_fnc_taskPatrol;
+
+//set behavior params
+_myGroupVeh setBehaviour "CARELESS";
+_myGroupVeh setCombatMode "GREEN";
+
+
+_groupsVeh pushback _myGroupVeh;
 

@@ -7,7 +7,7 @@ createcenter CIVILIAN;
 
 //debug
 debug_ai_OFF = false;
-debug_ai_spawnZonesMarkers_OFF = false; 
+debug_ai_spawnZonesMarkers_OFF = true; 
 
 
 // Just where this code goes in the "final product" is TBD

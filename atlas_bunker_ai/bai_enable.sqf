@@ -17,10 +17,7 @@ _myGroup = [position _self, resistance, 2] call BIS_fnc_spawnGroup;
 _groups pushback _myGroup;
 
 
-//syntax: [arguments] call BIS_fnc_spawnGroup;
-//_myGroup = [position, side, character details, relative positions, list of ranks, skill range, ammo count range, randomization controls, azimuth] call BIS_fnc_spawnGroup;
-
-//some arguments are optional, this is the bare minimum:
-//_myGroup = [position, side, character details] call BIS_fnc_spawnGroup;
+//make the group defend the bunker
+[_myGroup, position _self] call bis_fnc_taskDefend;
 
 
