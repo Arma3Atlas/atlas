@@ -50,7 +50,7 @@ _groups pushback _myGroup;
 _posVeh = _myPlaces call BIS_fnc_selectRandom;
 _grpVeh = [_posVeh select 0, 180, "I_MRAP_03_hmg_F", resistance] call bis_fnc_spawnvehicle;
 _myGroupVeh = _grpVeh select 2;
-[_myGroupVeh, position _self, 75] call BIS_fnc_taskPatrol;
+[_myGroupVeh, position _self, 150] call BIS_fnc_taskPatrol;
 
 //set behavior params
 _myGroupVeh setBehaviour "CARELESS";

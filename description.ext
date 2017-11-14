@@ -46,6 +46,7 @@ class CfgFunctions
 		tag = "ATLAS";
 	
 		#include "atlas_ai\cfgFunctions.hpp"
+        #include "atlas_loadouts\cfgFunctions.hpp"
 
 	};
 
