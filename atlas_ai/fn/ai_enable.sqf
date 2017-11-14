@@ -54,7 +54,7 @@ _myGroupVeh = _grpVeh select 2;
 
 //set behavior params
 _myGroupVeh setBehaviour "CARELESS";
-_myGroupVeh setCombatMode "GREEN";
+_myGroupVeh setCombatMode "YELLOW";
 
 
 _groupsVeh pushback _myGroupVeh;

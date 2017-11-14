@@ -1,3 +1,52 @@
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 110;
+};
+
+
+// -----------------------------
+onLoadName = "[ATLAS]";
+onLoadMission = "ATLAS";
+
+onLoadIntro = "Breaking shit since '72";
+
+//overviewPicture = "\RONIN_Rsc\rImgs\RONIN_icon_white.paa";
+author = "LOKI";
+onLoadMissionTime = 1;
+onLoadIntroTime = 1;
+
+enableItemsDropping = 1;
+
+//REMOVE ME /////////////////////////
+allowFunctionsRecompile = 1;
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+////////////////////////////////////
+
+respawn = 3;
+respawnDelay = 5;
+respawnDialog = 1;
+
+respawnVehicleDelay = 10;
+
+briefing = 1;
+debriefing = 1;
+
+disabledAI = 1;
+
+aiKills = 1;
+showGPS = 1;
+showCompass = 1;
+showMap = 1;
+showPad = 1;
+showWatch = 1;
+
+
+
+
+
 class CfgRemoteExec
 {        
     // List of script functions allowed to be sent from client via remoteExec

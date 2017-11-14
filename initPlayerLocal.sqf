@@ -13,15 +13,4 @@ if ((_uid isEqualTo "76561198080819113") || ((name player) isEqualTo "LOKI" )) t
 };
 
 
-//
-
-
-
-
-
-
-
-
-
-
 
