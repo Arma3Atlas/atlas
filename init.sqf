@@ -5,6 +5,10 @@ createcenter EAST;
 createcenter RESISTANCE;
 createcenter CIVILIAN;
 
+//debug
+debug_ai_OFF = false;
+debug_ai_spawnZonesMarkers_OFF = true; 
+
 
 // Just where this code goes in the "final product" is TBD
 // a release would use compilefinal
@@ -18,6 +22,11 @@ atlas_obj_bunkerp_updater = compile preprocessFileLineNumbers "atlas_bunker\upda
 atlas_obj_bunker_open_to = compile preprocessFileLineNumbers "atlas_bunker\open_to.sqf";
 atlas_objp_bunker_progressbar = compile preprocessFileLineNumbers "atlas_bunker\progressbar.sqf";
 atlas_objp_bunker_captureduration = 12;
+
+atlas_obj_bunkerai_enable = compile preprocessFileLineNumbers "atlas_bunker_ai\bai_enable.sqf";
+atlas_obj_bunkerai_disable = compile preprocessFileLineNumbers "atlas_bunker_ai\bai_disable.sqf";
+atlas_obj_bunkerai_oncapture = compile preprocessFileLineNumbers "atlas_bunker_ai\bai_oncapture.sqf";
+
 
 // Town functions
 atlas_town_new = compile preprocessFileLineNumbers "atlas_town\newtown.sqf";
@@ -63,10 +72,8 @@ call atlas_util_drawtownlinks;
 //guiTest
 atlas_guiTest = compile preprocessFileLineNumbers "atlas_gui\guiBase.sqf"; 
 
-player addAction ["guiTest",atlas_guiTest];
-player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
-
-
+//player addAction ["guiTest",atlas_guiTest];
+//player addMPEventHandler ["MPRespawn", {[] spawn atlas_guiTest;}];
 
 
 
