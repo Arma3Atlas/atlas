@@ -2,6 +2,7 @@
 if (debug_ai_OFF) exitWith {};
 
 params ["_self"];
+_owner = [_self] call (_self getvariable "atlas_town_getowner");
 
 format ["atlas_ai_town_enable on %1",_self] call atlas_debugout;
 
@@ -39,7 +40,7 @@ if !(debug_ai_spawnZonesMarkers_OFF) then {
 _pos = _myPlaces call BIS_fnc_selectRandom;
 
 //spawn ai ground pounders
-_myGroup = [_pos select 0, resistance, 5] call BIS_fnc_spawnGroup;
+_myGroup = [_pos select 0, _owner, 5] call BIS_fnc_spawnGroup;
 _groups pushback _myGroup;
 
 //random ground pounders patrol tests
@@ -48,7 +49,9 @@ _groups pushback _myGroup;
 //spawn ai veh patrol tests
 //Array - 0: created vehicle (Object), 1: all crew (Array of Objects), 2: vehicle's group (Group)
 _posVeh = _myPlaces call BIS_fnc_selectRandom;
-_grpVeh = [_posVeh select 0, 180, "I_MRAP_03_hmg_F", resistance] call bis_fnc_spawnvehicle;
+
+_grpVeh = [_posVeh select 0, 180, "I_MRAP_03_hmg_F", _owner] call bis_fnc_spawnvehicle;
+
 _myGroupVeh = _grpVeh select 2;
 [_myGroupVeh, position _self, 150] call BIS_fnc_taskPatrol;
 
