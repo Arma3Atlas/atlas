@@ -2,7 +2,6 @@
 if (debug_ai_OFF) exitWith {};
 
 params ["_self"];
-_owner = [_self] call (_self getvariable "atlas_town_getowner");
 
 format ["atlas_ai_town_enable on %1",_self] call atlas_debugout;
 
@@ -15,6 +14,7 @@ _groups = [];
 _groupsVeh = [];
 _self setvariable ["atlas_aip_groups",_groups];
 _self setvariable ["atlas_aip_groups",_groupsVeh];
+_owner = [_self] call (_self getvariable "atlas_town_getowner");
 
 //ai spawn placement tests
 _myPlaces = selectBestPlaces [position _self, 150, "meadow + hills", 1, 10];
@@ -50,15 +50,24 @@ _groups pushback _myGroup;
 //Array - 0: created vehicle (Object), 1: all crew (Array of Objects), 2: vehicle's group (Group)
 _posVeh = _myPlaces call BIS_fnc_selectRandom;
 
-_grpVeh = [_posVeh select 0, 180, "I_MRAP_03_hmg_F", _owner] call bis_fnc_spawnvehicle;
+//temp switch for vehicles
+_vehType = "";
 
+switch (_owner) do {
+	case west: {_vehType = "B_MRAP_03_hmg_F"};
+	case east: {_vehType = "O_MRAP_03_hmg_F"};
+	case resistance: {_vehType = "I_MRAP_03_hmg_F"};
+	default {};
+};
+
+//spawn and set to patrol
+_grpVeh = [_posVeh select 0, 180, _vehType, _owner] call bis_fnc_spawnvehicle;
 _myGroupVeh = _grpVeh select 2;
 [_myGroupVeh, position _self, 150] call BIS_fnc_taskPatrol;
 
 //set behavior params
 _myGroupVeh setBehaviour "CARELESS";
 _myGroupVeh setCombatMode "YELLOW";
-
 
 _groupsVeh pushback _myGroupVeh;
 
