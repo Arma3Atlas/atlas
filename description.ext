@@ -96,6 +96,7 @@ class CfgFunctions
 	
 		#include "atlas_ai\cfgFunctions.hpp"
         #include "atlas_loadouts\cfgFunctions.hpp"
+        #include "atlas_randomization\cfgFunctions.hpp"
 
 	};
 
