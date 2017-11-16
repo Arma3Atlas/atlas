@@ -7,7 +7,17 @@ createcenter CIVILIAN;
 
 //debug
 debug_ai_OFF = false;
-debug_ai_spawnZonesMarkers_OFF = true; 
+debug_ai_spawnZonesMarkers_OFF = true;
+
+//ai vars
+ai_town_ground = true;
+ai_town_ground_count = 1;
+ai_town_ground_bunker = true;
+ai_town_ground_bunker_count = 3;
+ai_town_ground_house = false;	//not set yet
+ai_town_ground_house_count = 10;	//not set yet
+ai_town_ground_veh = true; 
+ai_town_ground_veh_count = 1; 	//not set yet
 
 
 // Just where this code goes in the "final product" is TBD

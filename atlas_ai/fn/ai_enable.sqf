@@ -25,8 +25,6 @@ if !(debug_ai_spawnZonesMarkers_OFF) then {
 {
 	private _markername = format ["ai_spawnZone_%1_%2",_self, _i];
 	_markerstr = createmarkerlocal [_markername, _x select 0];
-	//_markerstr setMarkerShape "ELLIPSE";
-	//_markerstr setMarkerSize [400,400];
 	_markerstr setMarkerType "mil_circle";
 	_markerstr setMarkerSize [0.5,0.5];
 	_markerstr setMarkerAlpha 0.5;
@@ -40,34 +38,40 @@ if !(debug_ai_spawnZonesMarkers_OFF) then {
 _pos = _myPlaces call BIS_fnc_selectRandom;
 
 //spawn ai ground pounders
-_myGroup = [_pos select 0, _owner, 5] call BIS_fnc_spawnGroup;
-_groups pushback _myGroup;
+if (ai_town_ground) then {
 
-//random ground pounders patrol tests
-[_myGroup, position _self, 50] call BIS_fnc_taskPatrol;
+	_myGroup = [_pos select 0, _owner, ai_town_ground_count] call BIS_fnc_spawnGroup;
+	_groups pushback _myGroup;
 
-//spawn ai veh patrol tests
-//Array - 0: created vehicle (Object), 1: all crew (Array of Objects), 2: vehicle's group (Group)
-_posVeh = _myPlaces call BIS_fnc_selectRandom;
-
-//temp switch for vehicles
-_vehType = "";
-
-switch (_owner) do {
-	case west: {_vehType = "B_MRAP_03_hmg_F"};
-	case east: {_vehType = "O_MRAP_03_hmg_F"};
-	case resistance: {_vehType = "I_MRAP_03_hmg_F"};
-	default {};
+	//random ground pounders patrol tests
+	[_myGroup, position _self, 50] call BIS_fnc_taskPatrol;
 };
 
-//spawn and set to patrol
-_grpVeh = [_posVeh select 0, 180, _vehType, _owner] call bis_fnc_spawnvehicle;
-_myGroupVeh = _grpVeh select 2;
-[_myGroupVeh, position _self, 150] call BIS_fnc_taskPatrol;
+//spawn ai ground veh
+if (ai_town_ground_veh) then {
 
-//set behavior params
-_myGroupVeh setBehaviour "CARELESS";
-_myGroupVeh setCombatMode "YELLOW";
+	//spawn ai veh patrol tests
+	//Array - 0: created vehicle (Object), 1: all crew (Array of Objects), 2: vehicle's group (Group)
+	_posVeh = _myPlaces call BIS_fnc_selectRandom;
 
-_groupsVeh pushback _myGroupVeh;
+	//temp switch for vehicles
+	_vehType = "";
 
+	switch (_owner) do {
+		case west: {_vehType = "B_MRAP_03_hmg_F"};
+		case east: {_vehType = "O_MRAP_03_hmg_F"};
+		case resistance: {_vehType = "I_MRAP_03_hmg_F"};
+		default {};
+	};
+
+	//spawn and set to patrol
+	_grpVeh = [_posVeh select 0, 180, _vehType, _owner] call bis_fnc_spawnvehicle;
+	_myGroupVeh = _grpVeh select 2;
+	[_myGroupVeh, position _self, 150] call BIS_fnc_taskPatrol;
+
+	//set behavior params
+	_myGroupVeh setBehaviour "CARELESS";
+	_myGroupVeh setCombatMode "YELLOW";
+
+	_groupsVeh pushback _myGroupVeh;
+};

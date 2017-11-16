@@ -14,10 +14,25 @@ _groups = [];
 _self setvariable ["atlas_aip_groups",_groups];
 _owner = _self getvariable "atlas_objp_currentowner";
 
-_myGroup = [position _self, _owner, 2] call BIS_fnc_spawnGroup;
-_groups pushback _myGroup;
+//spawn ai ground pounders
+if (ai_town_ground_bunker) then {
 
-//make the group defend the bunker
-[_myGroup, position _self] call bis_fnc_taskDefend;
+	_myGroup = [position _self, _owner, ai_town_ground_bunker_count] call BIS_fnc_spawnGroup;
+	_groups pushback _myGroup;
 
+	
+
+	//spawn static weapon system tests
+	_dir = getDir _self;
+	
+	//player setPos [getPos player select 0, getPos player select 1, (getPos player select 2) +10];
+	_posBunker = [getPos _self select 0, (getPos _self select 1) +5, getPos _self select 2];
+
+	_staticWeap = "B_HMG_01_high_F" createVehicle _posBunker;
+
+	//make the group defend the bunker
+	[_myGroup, _posBunker] call bis_fnc_taskDefend;
+
+
+};
 
