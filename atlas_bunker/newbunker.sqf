@@ -19,6 +19,13 @@ _self setvariable ["atlas_obj_owner",atlas_obj_bunker_getowner];
 _self setvariable ["atlas_obj_setowner",atlas_obj_bunker_setowner];
 _self setvariable ["atlas_obj_open_to",atlas_obj_bunker_open_to];
 
+
+//move bunker tests
+_pos = (position _parent) findEmptyPosition [10,200,"Land_HBarrier_01_tower_green_F"];
+x_pos = _pos;
+//move the bunker
+_self setPos _pos;
+
 // Trigger
 // todo: make server only - replace markertotrigger below
 _trg = createTrigger ["EmptyDetector", getpos _self, false];

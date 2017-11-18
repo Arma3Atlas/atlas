@@ -20,8 +20,6 @@ if (ai_town_ground_bunker) then {
 	_myGroup = [position _self, _owner, ai_town_ground_bunker_count] call BIS_fnc_spawnGroup;
 	_groups pushback _myGroup;
 
-	
-
 	//spawn static weapon system tests
 	_dir = getDir _self;
 	
