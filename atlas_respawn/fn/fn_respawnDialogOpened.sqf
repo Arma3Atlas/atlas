@@ -7,6 +7,10 @@ _spawnpoints = [player] call Atlas_fnc_getAvailableSpawnpoints;
 _listBox = ((uiNamespace getVariable "atlas_guiBase") displayCtrl 1500);
 //((_this select 0) displayCtrl 1500);
 
+_mapCtrl = ((uiNamespace getVariable "atlas_guiBase") displayCtrl 1200);
+_mapCtrl ctrlMapAnimAdd [0, 0.05, player];
+ctrlMapAnimCommit _mapCtrl;
+
 
 
 {
@@ -38,4 +42,4 @@ _listBox = ((uiNamespace getVariable "atlas_guiBase") displayCtrl 1500);
 	
 } forEach _spawnpoints;
 //98.127.40.244:2302
-((uiNamespace getVariable "atlas_guiBase") displayCtrl 1100) ctrlSetStructuredText parseText "sText adsadawgoes in here";
+//((uiNamespace getVariable "atlas_guiBase") displayCtrl 1100) ctrlSetStructuredText parseText "sText adsadawgoes in here";

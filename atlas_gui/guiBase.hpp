@@ -41,7 +41,7 @@ class atlas_gui_listBox_1500: ATLAS_RscListbox
 	idc = 1500;
 	text = "listBox_1"; //--- ToDo: Localize;
 	onLBSelChanged = "_this call Atlas_fnc_respawn_LbSelChanged";
-	onLBDblClick = "[(lbCurSel 1500),player] call Atlas_fnc_respawnAtPlace;";
+	onLBDblClick = "[lbData [1500,(lbCurSel 1500)]   ,player] call Atlas_fnc_respawnAtPlace;";
 	x = 0.308499 * safezoneW + safezoneX;
 	y = 0.247082 * safezoneH + safezoneY;
 	w = 0.0705531 * safezoneW;
@@ -50,7 +50,7 @@ class atlas_gui_listBox_1500: ATLAS_RscListbox
 class atlas_gui_rscButton_1600: ATLAS_RscButton
 {
 	idc = 1600;
-	action = "[(lbCurSel 1500),player] call Atlas_fnc_respawnAtPlace;";
+	action = "[lbData [1500,(lbCurSel 1500)]   ,player] call Atlas_fnc_respawnAtPlace;";
 	text = "Spawn"; //--- ToDo: Localize;
 	x = 0.308499 * safezoneW + safezoneX;
 	y = 0.565979 * safezoneH + safezoneY;
@@ -60,7 +60,7 @@ class atlas_gui_rscButton_1600: ATLAS_RscButton
 class atlas_gui_rscButton_1601: ATLAS_RscButton
 {
 	idc = 1601;
-	text = "Teleport"; //--- ToDo: Localize;
+	text = "do nothing"; //--- ToDo: Localize;
 	x = 0.308499 * safezoneW + safezoneX;
 	y = 0.598968 * safezoneH + safezoneY;
 	w = 0.0453556 * safezoneW;

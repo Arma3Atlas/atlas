@@ -19,7 +19,7 @@ class Atlas_Respawn_Vehicles
 		
 		class B_Truck_01_transport_F : BaseTruck
 		{
-			maxCapacity = 15;
+			maxCapacity = 30;
 		}
 		class B_Truck_01_covered_F : B_Truck_01_transport_F
 		{
@@ -28,7 +28,7 @@ class Atlas_Respawn_Vehicles
 
 		class O_Truck_03_transport_F : BaseTruck
 		{
-			maxCapacity = 12;
+			maxCapacity = 30;
 		}
 		class O_Truck_03_covered_F : O_Truck_03_transport_F
 		{

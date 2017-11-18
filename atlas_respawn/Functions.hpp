@@ -13,6 +13,7 @@ class Respawn
 	class refillStation {};
 	class respawnAtPlace {};
 	class subtractBody {};
+	class adjustBodyCount {};
 
 	class respawnDialogOpened {};
 	class respawn_LbSelChanged {};
