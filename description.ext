@@ -79,6 +79,9 @@ class CfgRemoteExec
     };
 };
 
+#include "atlas_respawn\RespawnVehicles.hpp"
+
+
 //ATLAS
 //guiTest
 //generic base class and color lists
@@ -96,7 +99,7 @@ class CfgFunctions
 	
 		#include "atlas_ai\cfgFunctions.hpp"
         #include "atlas_loadouts\cfgFunctions.hpp"
-
+        #include "atlas_respawn\Functions.hpp"
 	};
 
 };
