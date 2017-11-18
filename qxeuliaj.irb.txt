@@ -1,0 +1,41 @@
+﻿Merge branch 'mobile-respawn'
+
+# Conflicts:
+#	atlas_gui/guiBase.hpp
+#	description.ext
+#	init.sqf
+#	mission.sqm
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   atlas_respawn/Functions.hpp
+#	new file:   atlas_respawn/RespawnVehicles.hpp
+#	new file:   atlas_respawn/fn/fn_adjustBodyCount.sqf
+#	new file:   atlas_respawn/fn/fn_getAvailableSpawnpoints.sqf
+#	new file:   atlas_respawn/fn/fn_init.sqf
+#	new file:   atlas_respawn/fn/fn_initRespawnVehicle.sqf
+#	new file:   atlas_respawn/fn/fn_isRespawnable.sqf
+#	new file:   atlas_respawn/fn/fn_refillStation.sqf
+#	new file:   atlas_respawn/fn/fn_respawnAtPlace.sqf
+#	new file:   atlas_respawn/fn/fn_respawnDialogOpened.sqf
+#	new file:   atlas_respawn/fn/fn_respawn_LbSelChanged.sqf
+#	new file:   atlas_respawn/fn/fn_subtractBody.sqf
+#	new file:   atlas_respawn/fn/fn_transferBodies.sqf
+#	new file:   atlas_util/enforcePrivate.sqf
+#
+# Untracked files:
+#	.gitignore
+#
+
