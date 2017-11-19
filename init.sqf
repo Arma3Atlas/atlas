@@ -56,6 +56,16 @@ atlas_alltowns = compile preprocessFileLineNumbers "atlas_util\alltowns.sqf";
 atlas_util_ownsall = compile preprocessFileLineNumbers "atlas_util\ownsall.sqf";
 atlas_util_tracetowns = compile preprocessFileLineNumbers "atlas_util\tracetowns.sqf";
 
+
+
+//move bunker tests
+_pos = (position _parent) findEmptyPosition [10,200,"Land_HBarrier_01_tower_green_F"];
+x_pos = _pos;
+//move the bunker
+_self setPos _pos;
+
+
+
 //testTowns
 //west start
 [gravia, [telos], [gravia_bunker_1,gravia_bunker_2],resistance ] call atlas_town_new;

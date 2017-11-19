@@ -22,14 +22,12 @@ if (ai_town_ground_bunker) then {
 
 	//spawn static weapon system tests
 	_dir = getDir _self;
-	
-	//player setPos [getPos player select 0, getPos player select 1, (getPos player select 2) +10];
-	_posBunker = [getPos _self select 0, (getPos _self select 1) +5, getPos _self select 2];
+	_staticWeap = "B_HMG_01_high_F" createVehicle position _self;
+	_staticWeap setPos [getPos _self select 0, getPos _self select 1, (getPos _self select 2) +10]; 
 
-	_staticWeap = "B_HMG_01_high_F" createVehicle _posBunker;
 
 	//make the group defend the bunker
-	[_myGroup, _posBunker] call bis_fnc_taskDefend;
+	[_myGroup, position _self] call bis_fnc_taskDefend;
 
 
 };
